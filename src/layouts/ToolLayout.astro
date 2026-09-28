@@ -1,0 +1,358 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import TrustMeter from '../design/primitives/TrustMeter.svelte';
+import { getLiveTools, toolUrl, CATEGORIES, type ToolEntry } from '../lib/tools';
+
+interface Props {
+  tool: ToolEntry;
+}
+
+const { tool } = Astro.props;
+const { data } = tool;
+const { Content } = await render(tool);
+
+const title = `${data.title} — Free, Private, No Upload | NABL Tools`;
+const categoryInfo = CATEGORIES[data.category];
+
+const allTools = await getLiveTools();
+const relatedTools = data.related
+  .map((slug) => allTools.find((t) => t.slug === slug))
+  .filter((t): t is ToolEntry => Boolean(t));
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tools.nabl.in/' },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: categoryInfo?.title ?? data.category,
+      item: `https://tools.nabl.in/${data.category}`,
+    },
+    { '@type': 'ListItem', position: 3, name: data.title, item: `https://tools.nabl.in${toolUrl(tool.slug)}` },
+  ],
+};
+
+const webAppJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: data.title,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any (browser)',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: data.metaDescription,
+  url: `https://tools.nabl.in${toolUrl(tool.slug)}`,
+};
+
+const faqJsonLd =
+  data.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: data.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null;
+
+const extraJsonLd = [webAppJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
+---
+
+<BaseLayout
+  title={title}
+  description={data.metaDescription}
+  ogImage={`/og/${tool.slug}.png`}
+  breadcrumbJsonLd={breadcrumbJsonLd}
+  extraJsonLd={extraJsonLd}
+>
+  <article class="tool-page wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href={`/${data.category}`}>{categoryInfo?.title ?? data.category}</a></li>
+        <li aria-current="page">{data.title}</li>
+      </ol>
+    </nav>
+
+    <header class="tool-head">
+      <p class="serial readout">No. {data.serial}</p>
+      <h1>{data.title}</h1>
+      <p class="one-line">{data.oneLine}</p>
+    </header>
+
+    <section class="tool-stage" aria-label={`${data.title} tool`}>
+      <slot name="tool" />
+    </section>
+
+    <section class="trust-section">
+      <TrustMeter engineLabel={data.engineNote} client:visible />
+      <p class="trust-copy">
+        <strong>How your data is handled:</strong> everything above runs inside this browser tab; your file is never
+        uploaded. {data.engineNote}
+      </p>
+    </section>
+
+    <div class="content-columns">
+      <div class="content-main">
+        <Content />
+
+        <section aria-labelledby="how-to-use">
+          <h2 id="how-to-use">How to use it</h2>
+          <ol class="steps">
+            {data.steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        {
+          data.tips.length > 0 && (
+            <section aria-labelledby="tips">
+              <h2 id="tips">Tips &#38; edge cases</h2>
+              <ul class="tips">
+                {data.tips.map((tip) => (
+                  <li>{tip}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          data.faq.length > 0 && (
+            <section aria-labelledby="faq">
+              <h2 id="faq">FAQ</h2>
+              <dl class="faq">
+                {data.faq.map((item) => (
+                  <div class="faq-item">
+                    <dt>{item.q}</dt>
+                    <dd>{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="content-side">
+        <h2>Specs &#38; limits</h2>
+        <dl class="specs">
+          {
+            data.specs.formats.length > 0 && (
+              <>
+                <dt>Formats</dt>
+                <dd>{data.specs.formats.join(', ')}</dd>
+              </>
+            )
+          }
+          {
+            data.specs.maxSize && (
+              <>
+                <dt>Size</dt>
+                <dd>{data.specs.maxSize}</dd>
+              </>
+            )
+          }
+          <dt>Browser support</dt>
+          <dd>{data.specs.browserSupport}</dd>
+          {
+            data.specs.mobileNote && (
+              <>
+                <dt>On mobile</dt>
+                <dd>{data.specs.mobileNote}</dd>
+              </>
+            )
+          }
+        </dl>
+
+        {
+          relatedTools.length > 0 && (
+            <>
+              <h2>Related instruments</h2>
+              <ul class="related-list">
+                {relatedTools.map((rt) => (
+                  <li>
+                    <a href={toolUrl(rt.slug)}>
+                      <span class="readout">No. {rt.data.serial}</span> {rt.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .tool-page {
+    padding-block: var(--space-6) var(--space-9);
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    font-size: var(--text-xs);
+    color: var(--fg-faint);
+    flex-wrap: wrap;
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+  }
+
+  .breadcrumbs a {
+    color: var(--fg-faint);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--fg);
+  }
+
+  .tool-head {
+    margin-bottom: var(--space-6);
+  }
+
+  .serial {
+    color: var(--signal);
+    font-size: var(--text-sm);
+    margin: 0 0 var(--space-2);
+  }
+
+  .one-line {
+    font-size: var(--text-md);
+    color: var(--fg-soft);
+    max-width: 60ch;
+  }
+
+  .tool-stage {
+    margin-bottom: var(--space-5);
+  }
+
+  .trust-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-copy {
+    margin: 0;
+    font-size: var(--text-sm);
+    max-width: 56ch;
+  }
+
+  .content-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: var(--space-8);
+  }
+
+  .content-main h2,
+  .content-side h2 {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-5);
+    margin-top: var(--space-7);
+  }
+
+  .content-main h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .steps {
+    padding-left: 1.25em;
+    color: var(--fg-soft);
+  }
+
+  .steps li {
+    margin-bottom: var(--space-2);
+  }
+
+  .tips {
+    padding-left: 1.25em;
+    color: var(--fg-soft);
+  }
+
+  .tips li {
+    margin-bottom: var(--space-3);
+  }
+
+  .faq-item {
+    margin-bottom: var(--space-5);
+  }
+
+  .faq dt {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-2);
+  }
+
+  .faq dd {
+    margin: 0;
+    color: var(--fg-soft);
+  }
+
+  .content-side {
+    font-size: var(--text-sm);
+  }
+
+  .specs {
+    margin: 0;
+  }
+
+  .specs dt {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--text-xs);
+    color: var(--fg-faint);
+    margin-top: var(--space-4);
+  }
+
+  .specs dt:first-of-type {
+    margin-top: 0;
+  }
+
+  .specs dd {
+    margin: var(--space-1) 0 0;
+    color: var(--fg-soft);
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .related-list li {
+    margin-bottom: var(--space-3);
+  }
+
+  .related-list a {
+    text-decoration: none;
+    color: var(--fg);
+  }
+
+  .related-list .readout {
+    color: var(--fg-faint);
+    font-size: var(--text-xs);
+  }
+
+  @media (max-width: 800px) {
+    .content-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

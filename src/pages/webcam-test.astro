@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import WebcamTest from '../tools/webcam-test/WebcamTest.svelte';
+
+const tool = await getEntry('tools', 'webcam-test');
+if (!tool) throw new Error('Missing tools/webcam-test content entry');
+---
+
+<ToolLayout tool={tool}>
+  <WebcamTest slot="tool" client:visible />
+</ToolLayout>

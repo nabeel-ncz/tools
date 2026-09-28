@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLiveTools, toolUrl, CATEGORIES } from '../lib/tools';
+
+const tools = await getLiveTools();
+const categories = Object.entries(CATEGORIES).sort((a, b) => a[1].order - b[1].order);
+
+const title = 'NABL Tools — Private, Instant Browser Tools | No Upload, No Login';
+const description = 'A catalogue of premium browser-native tools. Nothing leaves your device.';
+---
+
+<BaseLayout title={title} description={description} isHome={true}>
+  <section class="wrap hero">
+    <p class="hero-kicker readout">Instrument catalogue</p>
+    <h1>Nothing leaves your device.</h1>
+    <p class="hero-copy">
+      A directory of premium tools that run entirely in your browser: media, documents, devices, and visual output.
+      No login, no uploads, no ads, no distractions — just the instrument you need.
+    </p>
+  </section>
+
+  <div class="wrap">
+    {
+      categories.map(([key, info]) => {
+        const items = tools.filter((t) => t.data.category === key);
+        if (items.length === 0) return null;
+        return (
+          <section class="category-block" aria-labelledby={`cat-${key}`}>
+            <div class="category-head">
+              <h2 id={`cat-${key}`}>
+                <a href={`/${key}`}>{info.title}</a>
+              </h2>
+              <a class="category-link readout" href={`/${key}`}>
+                View all &#8594;
+              </a>
+            </div>
+            <ol class="catalogue-list">
+              {items.map((tool) => (
+                <li class="catalogue-row">
+                  <a href={toolUrl(tool.slug)} class="catalogue-link">
+                    <span class="cat-serial readout">No. {tool.data.serial}</span>
+                    <span class="cat-title">{tool.data.title}</span>
+                    <span class="cat-purpose">{tool.data.oneLine}</span>
+                    <span class="cat-arrow" aria-hidden="true">
+                      &#8594;
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-8) var(--space-7);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--space-7);
+  }
+
+  .hero-kicker {
+    color: var(--signal);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero h1 {
+    font-size: var(--text-3xl);
+    max-width: 14ch;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-copy {
+    max-width: 56ch;
+    font-size: var(--text-md);
+  }
+
+  .category-block {
+    margin-bottom: var(--space-8);
+  }
+
+  .category-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .category-head h2 {
+    margin: 0;
+  }
+
+  .category-head h2 a {
+    text-decoration: none;
+    color: var(--fg);
+  }
+
+  .category-link {
+    color: var(--fg-faint);
+    text-decoration: none;
+    font-size: var(--text-xs);
+  }
+
+  .category-link:hover {
+    color: var(--signal);
+  }
+
+  .catalogue-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .catalogue-row {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .catalogue-link {
+    display: grid;
+    grid-template-columns: 4.5em 1fr 2fr auto;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-2);
+    text-decoration: none;
+    color: var(--fg);
+    transition: background var(--duration-tick) var(--ease-snap);
+  }
+
+  .catalogue-link:hover {
+    background: var(--bg-raised);
+    color: var(--fg);
+  }
+
+  .catalogue-link:hover .cat-arrow {
+    color: var(--signal);
+    transform: translateX(3px);
+  }
+
+  .cat-serial {
+    color: var(--fg-faint);
+    font-size: var(--text-xs);
+  }
+
+  .cat-title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+  }
+
+  .cat-purpose {
+    color: var(--fg-faint);
+    font-size: var(--text-sm);
+  }
+
+  .cat-arrow {
+    color: var(--fg-faint);
+    transition: transform var(--duration-tick) var(--ease-snap);
+  }
+
+  @media (max-width: 700px) {
+    .catalogue-link {
+      grid-template-columns: 3.5em 1fr;
+      grid-template-areas: 'serial title' '. purpose';
+    }
+    .cat-serial {
+      grid-area: serial;
+    }
+    .cat-title {
+      grid-area: title;
+    }
+    .cat-purpose {
+      grid-area: purpose;
+    }
+    .cat-arrow {
+      display: none;
+    }
+  }
+</style>

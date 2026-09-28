@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import MicTest from '../tools/mic-test/MicTest.svelte';
+
+const tool = await getEntry('tools', 'mic-test');
+if (!tool) throw new Error('Missing tools/mic-test content entry');
+---
+
+<ToolLayout tool={tool}>
+  <MicTest slot="tool" client:visible />
+</ToolLayout>

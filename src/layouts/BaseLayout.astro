@@ -1,0 +1,101 @@
+---
+import '../design/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLiveTools, paletteItems } from '../lib/tools';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  isHome?: boolean;
+  breadcrumbJsonLd?: object;
+  extraJsonLd?: object[];
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og/default.png',
+  isHome = false,
+  breadcrumbJsonLd,
+  extraJsonLd = [],
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const tools = await getLiveTools();
+const items = paletteItems(tools);
+
+const siteJsonLd = isHome
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'NABL Tools',
+        url: 'https://tools.nabl.in',
+        description: 'Private, instant browser-native tools. Nothing leaves your device.',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'NABL Tools',
+        url: 'https://tools.nabl.in',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://tools.nabl.in/?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ]
+  : [];
+
+const jsonLdBlocks = [...siteJsonLd, ...(breadcrumbJsonLd ? [breadcrumbJsonLd] : []), ...extraJsonLd];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1b1a" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    {jsonLdBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
+
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('nabl-theme');
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.setAttribute('data-theme', stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header items={items} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

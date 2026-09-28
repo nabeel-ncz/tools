@@ -1,0 +1,100 @@
+/* -----------------------------------------------------------------------
+   Design tokens — "The Instrument Bench"
+   Warm paper + ink, one signal color reserved for live/active/recording.
+   ----------------------------------------------------------------------- */
+
+:root {
+  /* Palette — Day Bench */
+  --color-paper: #f4f1ea;
+  --color-paper-raised: #eae5d9;
+  --color-ink: #141413;
+  --color-ink-soft: #4a4842;
+  --color-ink-faint: #8a867b;
+  --color-line: #cfc9b8;
+  --color-line-strong: #141413;
+  --color-signal: #e4572e;
+  --color-signal-ink: #ffffff;
+
+  /* Semantic aliases */
+  --bg: var(--color-paper);
+  --bg-raised: var(--color-paper-raised);
+  --fg: var(--color-ink);
+  --fg-soft: var(--color-ink-soft);
+  --fg-faint: var(--color-ink-faint);
+  --border: var(--color-line);
+  --border-strong: var(--color-line-strong);
+  --signal: var(--color-signal);
+  --signal-fg: var(--color-signal-ink);
+  --focus-ring: var(--color-signal);
+
+  /* Type roles */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-ui: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.875rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 3.5rem;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Motion — mechanical, not floaty */
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+  --duration-tick: 120ms;
+  --duration-snap: 180ms;
+
+  /* Blueprint grid backing */
+  --grid-line: color-mix(in srgb, var(--fg) 6%, transparent);
+  --grid-size: 24px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  --shadow-instrument: 0 1px 0 var(--border), 0 1px 2px rgba(20, 20, 19, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-paper: #1b1b1a;
+    --color-paper-raised: #232322;
+    --color-ink: #f4f1ea;
+    --color-ink-soft: #c9c5b8;
+    --color-ink-faint: #83807a;
+    --color-line: #3a3a37;
+    --color-line-strong: #f4f1ea;
+    --shadow-instrument: 0 1px 0 var(--border), 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-paper: #1b1b1a;
+  --color-paper-raised: #232322;
+  --color-ink: #f4f1ea;
+  --color-ink-soft: #c9c5b8;
+  --color-ink-faint: #83807a;
+  --color-line: #3a3a37;
+  --color-line-strong: #f4f1ea;
+  --shadow-instrument: 0 1px 0 var(--border), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-tick: 0ms;
+    --duration-snap: 0ms;
+  }
+}
