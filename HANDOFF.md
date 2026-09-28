@@ -1,13 +1,109 @@
 # Handoff — what a human needs to review before launch
 
-This repo was built in one agentic session per an accelerated version of the
-PRD's timeline (§7 override: "build the complete system in one day," keeping
-the PRD's build order). Everything below is real, working code that passes
-`npm run build` (icon/OG generation → `astro check` → `astro build`) — but a
-few categories of work are explicitly **not** verified the way a human
-QA pass would verify them, because this session had no live browser, no
-Cloudflare account, and no way to actually speak WebRTC to a second device.
-Read this before calling anything here launch-ready.
+This repo was built across two agentic sessions: an initial build session (§7
+override: "build the complete system in one day"), followed by a full QA pass
+with a real headless Chromium, real fake media devices, real engines, and a
+real local Cloudflare Worker. **Sections 1-6 below are the original build
+session's notes and are partly superseded** — see the Go/No-Go checklist
+immediately below for the current, accurate state. Full detail on everything
+tested: `QA-REPORT.md`.
+
+## Go/No-Go checklist
+
+### Verified by automated tests (real browser, real engines, no mocking)
+- All 16 tools' core UI/workflow, using real fake camera/mic/screen-capture,
+  real PDF processing, a real ffmpeg.wasm transcode, and a real two-device
+  WebRTC file transfer (SHA-256 byte-exact match) via a real local signaling
+  Worker (`wrangler dev`).
+- Redact's core privacy claim: drawn-over text is genuinely unextractable
+  from the output; untouched pages keep their text.
+- Trust Meter: 0 bytes / no POST-PUT-PATCH requests on every tool, for the
+  entire duration of every test.
+- SEO: 345/346 scripted checks (titles, descriptions, canonical, OG, JSON-LD,
+  sitemap, robots, full internal link graph, no-JS content).
+- Performance: Lighthouse 100/100/100/100 on every page (mobile).
+- Accessibility: 24/24 axe-core tests pass, 0 serious/critical violations,
+  full keyboard audit done.
+- Security headers (`public/_headers`) live-tested against real Chromium
+  across all 21 pages, including working COOP/COEP on the three engine-heavy
+  tool pages.
+- Design: 150 reference screenshots (25 pages × 3 widths × 2 themes), no
+  anti-brief violations, no 360px overflow anywhere.
+- `npm run build`: 0 errors, 25/25 pages, as the final step of this pass.
+
+### Fixed during this QA pass (real bugs, not just test issues)
+- pdfjs-dist crashed on any browser without the brand-new
+  `Map.prototype.getOrInsertComputed` (broke PDF Compressor/Split/Redact) —
+  polyfilled.
+- PDF Compressor could hand back a file larger than the input on low-detail
+  sources — now falls back to the original bytes.
+- Video Compressor and the two ONNX tools' engines were CDN-dependent
+  (blocked by this sandbox's network policy) — now self-hosted, verified
+  working with zero third-party requests.
+- File Drop's sender-side progress UI never updated (Svelte 5 `$state`
+  reactivity bug) — fixed; verified with a real transfer.
+- ~200KB initial-JS budget violation on 5 PDF tools (static vs. lazy
+  `pdf-lib` import) — fixed, all now load ~30KB.
+- Two real axe-core violations (missing accessible name, nested-interactive)
+  and two rounds of WCAG AA color-contrast failures (a shared faint-text
+  token, then the brand vermilion used directly as text) — all fixed.
+- Screen Recorder's idle toggle buttons had a CSS specificity bug making an
+  "on" toggle's text invisible (signal-on-signal) — fixed.
+- Three real bugs in the security-headers pass (invalid STUN CSP entry,
+  missing `media-src`, COEP needing CORP on built assets) — fixed.
+- Six page titles over the 60-char SEO budget — fixed.
+
+### Still open (with severity)
+- **Medium — real inference unverified.** Transcriber (Whisper), OCR
+  (tesseract.js), Background Remover, and Image Upscaler: UI and
+  error-handling are verified for real (a real network request fires, a real
+  error surfaces gracefully within a timeout), but actual model
+  download/inference has never run end-to-end, because this sandbox's
+  network policy blocks huggingface.co/jsdelivr.net/unpkg.com outright. This
+  is a sandbox limitation, not a known defect — but it is genuinely
+  unverified. **Do one real-browser pass per tool with real internet access
+  before calling these four launch-ready.**
+- **Low — PWA first-visit offline.** A page's very first visit can't be
+  cached by its own service-worker install; an offline reload of an
+  only-once-visited page silently serves the cached homepage instead of an
+  explicit offline notice. Documented, not fixed (a UX judgment call, see
+  `public/sw.js`'s comments).
+- **Low — Sign & Fill keyboard gap.** Placing a signature/text field is
+  fully keyboard-operable; moving/resizing it afterward is pointer-only.
+  Real feature work, not a safe small fix.
+- **Low — 404 canonical mismatch.** Inherent Astro static-build quirk for
+  the special 404 route; not linked or sitemapped, so no real SEO impact.
+- **Info — decorative signal-color use.** The vermilion accent is used
+  decoratively (not just for live/active states) as the catalogue's serial-
+  number/wayfinding signature (header mark, "No. XX" labels). Flagged by the
+  anti-brief's letter but applied with total restraint; left as a judgment
+  call for the brief owner rather than changed unilaterally.
+- **Part 2 (launch assets) was not started this session** — demo media,
+  marketing screenshots, Product Hunt/Show HN/Reddit copy, directory
+  listings, README polish, and social posts are all still to do.
+
+### Owner-only tasks (can't be done from this sandbox)
+- Real-device testing: iPhone Safari, Android Chrome, Firefox.
+- Two-device File Drop transfer over a real network (only same-machine
+  loopback WebRTC was tested here; STUN itself was confirmed unreachable
+  from this sandbox, so cross-network NAT traversal is unverified).
+- Content review: every tool's copy is still `draftContent: true` — needs
+  real keyword research (PRD §5) before publishing; flip the flag once
+  reviewed.
+- Cloudflare Pages deploy + the separate `workers/filedrop` Worker deploy +
+  `PUBLIC_SIGNALING_URL` at build time.
+- Domain pointing, Search Console + Bing verification, first IndexNow ping
+  (only possible once the domain is live — see `docs/indexnow.md`).
+- Posting/publishing any launch assets once Part 2 is produced.
+
+---
+
+## Original build-session notes (partly superseded — see checklist above)
+
+A few categories below say "not verified" because the original build session
+had no live browser. That has since changed — see `QA-REPORT.md` for what a
+real headless Chromium pass actually confirmed. Sections are kept for
+historical detail on decisions made (e.g. license checks, architecture notes).
 
 ## 1. SEO content — DRAFT, needs human review
 
