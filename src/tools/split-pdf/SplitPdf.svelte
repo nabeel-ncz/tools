@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { PDFDocument } from 'pdf-lib';
   import Dropzone from '../../design/primitives/Dropzone.svelte';
   import ProgressReadout from '../../design/primitives/ProgressReadout.svelte';
 
@@ -98,6 +97,7 @@
     error = '';
     progress = 0;
     try {
+      const { PDFDocument } = await import('pdf-lib');
       const bytes = await file.arrayBuffer();
       const srcDoc = await PDFDocument.load(bytes);
       const baseName = file.name.replace(/\.pdf$/i, '');

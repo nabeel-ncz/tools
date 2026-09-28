@@ -39,36 +39,26 @@
   function onDragLeave() {
     dragging = false;
   }
-
-  function onClick() {
-    if (!disabled) inputEl.click();
-  }
-
-  function onKeydown(e: KeyboardEvent) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onClick();
-    }
-  }
 </script>
 
-<div
-  class="dropzone"
-  class:dragging
-  class:disabled
-  role="button"
-  tabindex={disabled ? -1 : 0}
-  aria-disabled={disabled}
-  ondrop={onDrop}
-  ondragover={onDragOver}
-  ondragleave={onDragLeave}
-  onclick={onClick}
-  onkeydown={onKeydown}
->
+<!--
+  A single native <label> wraps the (visually-hidden but still focusable and
+  keyboard-operable) file input, instead of a separate role="button" element
+  with its own click/keydown handlers. That earlier pattern put two
+  interactive controls in the accessibility tree, one nested inside the
+  other (axe-core: "nested-interactive", serious impact) — a <label>
+  wrapping its control is the standard, natively accessible way to give a
+  form control a larger click target: clicking anywhere in the label
+  activates the input (and does nothing when the input is disabled) with no
+  extra JS, and the input's own native keyboard behavior (Tab to focus,
+  Enter/Space to open the file picker) already covers keyboard use.
+-->
+<label class="dropzone" class:dragging class:disabled ondrop={onDrop} ondragover={onDragOver} ondragleave={onDragLeave}>
   <input
     bind:this={inputEl}
     type="file"
     class="visually-hidden"
+    aria-label={label}
     {accept}
     {multiple}
     {disabled}
@@ -80,10 +70,11 @@
   </svg>
   <p class="dz-label">{label}</p>
   {#if hint}<p class="dz-hint readout">{hint}</p>{/if}
-</div>
+</label>
 
 <style>
   .dropzone {
+    display: block;
     border: 1px dashed var(--border-strong);
     border-radius: var(--radius-md);
     padding: var(--space-8) var(--space-5);

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { PDFDocument } from 'pdf-lib';
   import Dropzone from '../../design/primitives/Dropzone.svelte';
   import ProgressReadout from '../../design/primitives/ProgressReadout.svelte';
   import Meter from '../../design/primitives/Meter.svelte';
@@ -52,6 +51,7 @@
   }
 
   async function compressOne(file: File, onPage: (p: number, total: number) => void): Promise<JobResult> {
+    const { PDFDocument } = await import('pdf-lib');
     const { loadPdf, renderPageToCanvas } = await import('../pdf-shared/pdfjs');
     const bytes = await file.arrayBuffer();
     const doc = await loadPdf(bytes.slice(0));
@@ -72,6 +72,21 @@
     }
 
     const outBytes = await outDoc.save();
+
+    // Re-rendering as JPEG only pays off when the source has real photographic
+    // detail. For a PDF that's already compact (flat-color/vector-like pages,
+    // or images the source PDF already compressed well), the re-encoded
+    // version can come out larger — never hand back a "compressed" file
+    // that's actually bigger than what the user gave us.
+    if (outBytes.byteLength >= bytes.byteLength) {
+      return {
+        name: file.name.replace(/\.pdf$/i, '') + '-compressed.pdf',
+        originalSize: file.size,
+        compressedSize: bytes.byteLength,
+        blob: new Blob([bytes], { type: 'application/pdf' }),
+      };
+    }
+
     return {
       name: file.name.replace(/\.pdf$/i, '') + `-compressed.pdf`,
       originalSize: file.size,

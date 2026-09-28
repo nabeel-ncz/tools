@@ -142,12 +142,27 @@ test.describe('PWA offline behavior (public/sw.js)', () => {
 
     await page.goto('/favicon-generator');
     // Wait for the service worker registered in BaseLayout.astro to install
-    // and become the active controller, so its install-time precache (and
-    // this page's own network-first cache.put) has actually happened.
+    // and take control (`self.clients.claim()` in the 'activate' handler).
     await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
-    // Give the fetch-handler's cache.put() for this navigation response (and
-    // its static asset chunks) a brief moment to land before we go offline.
-    await page.waitForTimeout(1000);
+
+    // NOTE — real finding, not a test artifact: the page load above is
+    // *not* itself cached by the SW's fetch handler, even though it
+    // finished after `serviceWorker.ready` resolved. A page's own
+    // registering navigation is served by the network before any SW exists
+    // for that client; the SW only starts intercepting *subsequent*
+    // fetches after it activates and claims clients. So a genuine first-
+    // ever visit followed immediately by going offline does NOT reliably
+    // serve this exact page from cache — see the dedicated test below,
+    // which reproduces this and shows what actually happens (the cached
+    // home page is served instead, via sw.js's `cache.match('/')`
+    // fallback — not a raw browser error, but not this page either).
+    //
+    // A real returning visit — reload once while still online, so the now-
+    // active/controlling SW itself intercepts and caches this exact page's
+    // navigation response — is what actually makes a page reliably
+    // available offline, and is what this test exercises.
+    await page.reload();
+    await page.waitForLoadState('load');
 
     await context.setOffline(true);
     await page.reload();
@@ -155,7 +170,28 @@ test.describe('PWA offline behavior (public/sw.js)', () => {
     await expect(page.locator('h1')).toHaveText('Favicon & Icon Generator', { timeout: 10_000 });
     // Tool UI (the Dropzone primitive) should be present and interactive,
     // not a browser offline error page.
-    await expect(page.getByText(/drop a square image/i)).toBeVisible();
+    await expect(page.locator('.dropzone')).toBeVisible();
+
+    await context.close();
+  });
+
+  test('a genuine first-ever visit is not yet cached, so offline-reload serves the cached shell, not the tool page', async ({
+    browser,
+  }) => {
+    test.setTimeout(60_000);
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto('/favicon-generator');
+    await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
+
+    await context.setOffline(true);
+    await page.reload();
+
+    // Documents the real gap explained above: this is the cached home page
+    // ('/', part of APP_SHELL), not a cached copy of favicon-generator —
+    // which the SW's own fetch handler never got the chance to store.
+    await expect(page.locator('h1')).toHaveText('Nothing leaves your device.', { timeout: 10_000 });
 
     await context.close();
   });

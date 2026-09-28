@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
   import Dropzone from '../../design/primitives/Dropzone.svelte';
   import ProgressReadout from '../../design/primitives/ProgressReadout.svelte';
 
@@ -213,6 +212,7 @@
     status = 'exporting';
     error = '';
     try {
+      const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
       const outDoc = await PDFDocument.load(pdfBytesOriginal.slice(0));
       const font = await outDoc.embedFont(StandardFonts.Helvetica);
       const pages = outDoc.getPages();

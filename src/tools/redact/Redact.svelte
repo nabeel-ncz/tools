@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { PDFDocument } from 'pdf-lib';
   import Dropzone from '../../design/primitives/Dropzone.svelte';
   import ProgressReadout from '../../design/primitives/ProgressReadout.svelte';
 
@@ -105,6 +104,7 @@
     error = '';
     progress = 0;
     try {
+      const { PDFDocument } = await import('pdf-lib');
       const { loadPdf, renderPageToCanvas } = await import('../pdf-shared/pdfjs');
       const srcDoc = await PDFDocument.load(pdfBytesOriginal.slice(0));
       const jsPdfDoc = await loadPdf(pdfBytesOriginal.slice(0));

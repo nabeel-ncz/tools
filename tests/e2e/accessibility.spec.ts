@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import type { Result } from 'axe-core';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -19,9 +20,9 @@ const ROUTES: { slug: string; path: string }[] = JSON.parse(
 const RESULTS_DIR = path.resolve(import.meta.dirname, '../../qa/axe');
 fs.mkdirSync(RESULTS_DIR, { recursive: true });
 
-type ViolationSummary = { id: string; impact: string | null | undefined; help: string; nodes: number; target: string[] };
+type ViolationSummary = { id: string; impact: string | null | undefined; help: string; nodes: number; target: string };
 
-function seriousOrCritical(violations: { id: string; impact?: string | null; help: string; nodes: { target: string[] }[] }[]): ViolationSummary[] {
+function seriousOrCritical(violations: Result[]): ViolationSummary[] {
   return violations
     .filter((v) => v.impact === 'serious' || v.impact === 'critical')
     .map((v) => ({
@@ -29,7 +30,7 @@ function seriousOrCritical(violations: { id: string; impact?: string | null; hel
       impact: v.impact,
       help: v.help,
       nodes: v.nodes.length,
-      target: v.nodes[0]?.target ?? [],
+      target: JSON.stringify(v.nodes[0]?.target ?? []),
     }));
 }
 

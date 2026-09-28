@@ -334,25 +334,34 @@
     }
     const channel = dc;
     const id = crypto.randomUUID();
-    const item: TransferItem = {
+    const mime = file.type || 'application/octet-stream';
+    outgoing.push({
       id,
       name: file.name,
       size: file.size,
-      mime: file.type || 'application/octet-stream',
+      mime,
       bytesDone: 0,
       direction: 'send',
       status: 'active',
       startedAt: performance.now(),
       rateBps: 0,
-    };
-    outgoing.push(item);
-    channel.send(JSON.stringify({ type: 'file-meta', id, name: file.name, size: file.size, mime: item.mime }));
+    });
+    // Look the item back up from the reactive `outgoing` array (rather than
+    // holding on to the plain object literal passed to `push`) before every
+    // mutation below. Svelte 5's `$state` proxies wrap nested objects when
+    // they're read back out of a reactive container; mutating the original,
+    // pre-push reference instead bypasses that proxy, so the UI never
+    // re-renders even though the transfer itself completes correctly. (The
+    // receive path below already does this correctly via `incoming.find`.)
+    const findItem = () => outgoing.find((t) => t.id === id)!;
+
+    channel.send(JSON.stringify({ type: 'file-meta', id, name: file.name, size: file.size, mime }));
 
     const buffer = await file.arrayBuffer();
     let offset = 0;
     while (offset < buffer.byteLength) {
       if (channel.readyState !== 'open') {
-        item.status = 'error';
+        findItem().status = 'error';
         errorMessage = 'Connection dropped mid-transfer.';
         return;
       }
@@ -362,12 +371,14 @@
       const end = Math.min(offset + CHUNK_SIZE, buffer.byteLength);
       channel.send(buffer.slice(offset, end));
       offset = end;
-      item.bytesDone = offset;
-      updateRate(item);
+      const current = findItem();
+      current.bytesDone = offset;
+      updateRate(current);
     }
     channel.send(JSON.stringify({ type: 'file-end', id }));
-    item.status = 'done';
-    item.bytesDone = item.size;
+    const finished = findItem();
+    finished.status = 'done';
+    finished.bytesDone = finished.size;
   }
 
   // ---- Receiving ----

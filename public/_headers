@@ -1,0 +1,89 @@
+# Cloudflare Pages headers for NABL Tools (https://tools.nabl.in)
+#
+# Cloudflare Pages merges headers from every matching block (broadest to
+# most specific, in file order) rather than letting a more specific path
+# "win" automatically — if two matching blocks set the same header name,
+# their values get comma-joined, which corrupts a structured header like
+# Content-Security-Policy or Permissions-Policy. So every path-specific
+# block below that needs a *different* CSP or Permissions-Policy than /*
+# first detaches it with "! Header-Name" and then sets its own value.
+# See qa/lighthouse-summary.md and the audit report for how these were
+# derived and tested.
+
+/*
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), display-capture=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self'; manifest-src 'self'
+
+# Background Remover and Image Upscaler fetch their ONNX model weights from
+# Hugging Face at runtime (the WASM inference backend itself is self-hosted,
+# see src/tools/remove-background/onnxSetup.ts and
+# src/tools/image-upscaler/onnxSetup.ts) — allow that one host's connect-src.
+# Also scoped with COOP/COEP: both tools' onnxruntime-web falls back to
+# non-threaded WASM today, but cross-origin isolation unlocks the threaded
+# build later, and every asset these two pages load (self-hosted JS/WASM,
+# plus the huggingface.co model file) works fine under COEP — see the audit
+# report's COOP/COEP test notes.
+/remove-background/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/image-upscaler/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+# Video Compressor's ffmpeg.wasm core is fully self-hosted (no CSP change
+# needed from the site default) — COOP/COEP is added here so a future
+# switch to the multithreaded @ffmpeg/core-mt build can use
+# SharedArrayBuffer. Confirmed harmless: the page's only network fetch is
+# same-origin.
+/video-compressor/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+# OCR: tesseract.js is used with its default (CDN) worker/core/language-data
+# paths — see src/tools/ocr/Ocr.svelte, no override is passed to
+# createWorker() — so its script, worker and wasm all come from jsdelivr.
+# NOT given COOP/COEP: tesseract.js's jsdelivr-hosted core does not send a
+# Cross-Origin-Resource-Policy header, which COEP:require-corp would block.
+/ocr/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net; manifest-src 'self'
+
+# Transcriber: @huggingface/transformers fetches Whisper model weights from
+# Hugging Face and, since no wasmPaths override is set in Transcriber.svelte,
+# falls back to jsdelivr for its internal onnxruntime-web WASM backend too.
+/transcribe/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
+
+# File Drop: WebRTC signaling — wss://signal.tools.nabl.in once
+# workers/filedrop is deployed and PUBLIC_SIGNALING_URL is set at build time
+# (src/tools/file-drop/FileDrop.svelte); until then it falls back to
+# same-origin wss://<host>/ws/filedrop, already covered by 'self' — plus the
+# public STUN server used for ICE negotiation.
+/file-drop/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' wss://signal.tools.nabl.in stun:stun.l.google.com:19302; manifest-src 'self'
+
+# Camera / microphone / screen-capture permissions, scoped to only the tool
+# pages whose Svelte components actually call getUserMedia/getDisplayMedia
+# (verified against every src/tools/*/*.svelte — see the audit report).
+# Transcriber takes file upload only (no getUserMedia call in its source),
+# so it is deliberately left off this list.
+/webcam-test/*
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(), display-capture=(), geolocation=(), payment=()
+
+/mic-test/*
+  ! Permissions-Policy
+  Permissions-Policy: camera=(), microphone=(self), display-capture=(), geolocation=(), payment=()
+
+/screen-recorder/*
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(self), display-capture=(self), geolocation=(), payment=()
