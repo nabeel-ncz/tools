@@ -9,11 +9,14 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "fixtures": "node tests/fixtures/generate.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/svelte": "^7.0.1",
+    "@ffmpeg/core": "^0.12.6",
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@ffmpeg/util": "^0.12.2",
     "@fontsource/fraunces": "^5.3.0",
@@ -31,6 +34,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "axe-core": "^4.13.0",
     "gray-matter": "^4.0.3",
     "sharp": "^0.35.5",
     "typescript": "^5.7.2"

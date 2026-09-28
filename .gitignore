@@ -20,3 +20,13 @@ npm-debug.log*
 
 # os
 .DS_Store
+
+# test fixtures (regenerate with `node tests/fixtures/generate.mjs`) and
+# Playwright run artifacts — not source, not deliverables
+/tests/fixtures/*
+!/tests/fixtures/generate.mjs
+/test-results/
+/playwright-report/
+/qa/playwright-report.json
+/qa/*.zip
+/qa/lighthouse/*.json
