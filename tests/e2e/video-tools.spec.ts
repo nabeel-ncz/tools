@@ -31,6 +31,25 @@ async function readDownload(download: import('@playwright/test').Download): Prom
   return buf;
 }
 
+// Astro hydrates `client:visible` islands asynchronously (fetch + init of
+// the component chunk after an IntersectionObserver fires). On a very fast
+// local server this can occasionally still be in flight the instant the
+// page is considered "loaded", so a `setInputFiles` fired immediately after
+// `goto` can land before the Svelte `onchange` listener is wired up. Wait
+// for the network to go quiet, then retry the upload once if the tool's
+// reaction (revealing the trim UI) doesn't show up in time.
+async function uploadClip(page: Page, clipPath: string) {
+  await page.waitForLoadState('networkidle');
+  const fileInput = page.locator('input[type="file"]');
+  await fileInput.setInputFiles(clipPath);
+  try {
+    await expect(page.getByText(/in point/i)).toBeVisible({ timeout: 5_000 });
+  } catch {
+    await fileInput.setInputFiles(clipPath);
+    await expect(page.getByText(/in point/i)).toBeVisible({ timeout: 15_000 });
+  }
+}
+
 function trackRequests(page: Page) {
   const writes: Request[] = [];
   const crossOriginCdnGets: Request[] = [];
@@ -150,12 +169,7 @@ test.describe('Video Trimmer & Compressor', () => {
     const { writes, crossOriginCdnGets } = trackRequests(page);
 
     await page.goto('/video-compressor');
-
-    const fileInput = page.locator('input[type="file"]');
-    await fileInput.setInputFiles(CLIP_PATH);
-
-    // Wait for metadata to load (duration > 0 reveals the trim sliders).
-    await expect(page.getByText(/in point/i)).toBeVisible({ timeout: 15_000 });
+    await uploadClip(page, CLIP_PATH);
 
     // Narrow the trim slightly by nudging the out-point slider down, to also
     // exercise the trim path (clip is ~3s; a native range input responds to
@@ -214,11 +228,7 @@ test.describe('Video Trimmer & Compressor', () => {
     const { writes, crossOriginCdnGets } = trackRequests(page);
 
     await page.goto('/video-compressor');
-
-    const fileInput = page.locator('input[type="file"]');
-    await fileInput.setInputFiles(CLIP_PATH);
-
-    await expect(page.getByText(/in point/i)).toBeVisible({ timeout: 15_000 });
+    await uploadClip(page, CLIP_PATH);
 
     await page.getByRole('button', { name: 'GIF', exact: true }).click();
     await expect(page.getByRole('button', { name: 'GIF', exact: true })).toHaveClass(/active/);
