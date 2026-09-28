@@ -43,7 +43,7 @@
   }
 
   .led-live {
-    color: var(--signal);
+    color: var(--signal-text);
   }
 
   .led-error .dot {

@@ -71,7 +71,7 @@
   }
 
   .trust-meter.alert {
-    border-color: var(--signal);
+    border-color: var(--signal-text);
   }
 
   .tm-dot {

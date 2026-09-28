@@ -175,7 +175,7 @@
   .start-btn,
   .viewfinder-overlay button {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -241,7 +241,7 @@
   }
 
   .stop-btn:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 </style>

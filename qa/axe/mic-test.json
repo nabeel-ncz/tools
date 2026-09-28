@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:20:00.280Z",
-  "url": "http://127.0.0.1:5008/mic-test/",
+  "timestamp": "2026-09-28T16:55:50.535Z",
+  "url": "http://127.0.0.1:5022/mic-test/",
   "toolOptions": {
     "reporter": "v1"
   },
@@ -3241,6 +3241,81 @@
             {
               "id": "color-contrast",
               "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"led-label svelte-130rj6y\">idle</span>",
+          "target": [
+            ".led-label"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#141413",
+                "bgColor": "#e4572e",
+                "contrastRatio": 5,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 5"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button type=\"button\" class=\"start-btn svelte-t923q5\">Start microphone test</button>",
+          "target": [
+            ".start-btn"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
+          "target": [
+            ".tm-key"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
                 "fgColor": "#141413",
                 "bgColor": "#eae5d9",
                 "contrastRatio": 14.66,
@@ -6166,7 +6241,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"1zf2O\" component-url=\"/_astro/MicTest.DQIuB9Oc.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"MicTest\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"1zf2O\" component-url=\"/_astro/MicTest.Cqd0pMk-.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"MicTest\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"1zf2O\"]"
           ]
@@ -6366,7 +6441,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"JvJkd\" component-url=\"/_astro/TrustMeter.CYLe4Gt2.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"engineLabel\":[0],\"data-astro-cid-mqzpnqfb\":[0,true]}\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"JvJkd\" component-url=\"/_astro/TrustMeter.lBvV7Cfn.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"engineLabel\":[0],\"data-astro-cid-mqzpnqfb\":[0,true]}\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"JvJkd\"]"
           ]
@@ -9348,129 +9423,6 @@
     }
   ],
   "violations": [
-    {
-      "id": "color-contrast",
-      "impact": "serious",
-      "tags": [
-        "cat.color",
-        "wcag2aa",
-        "wcag143",
-        "TTv5",
-        "TT13.c",
-        "EN-301-549",
-        "EN-9.1.4.3",
-        "ACT",
-        "RGAAv4",
-        "RGAA-3.2.1"
-      ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"console svelte-t923q5\">",
-                  "target": [
-                    ".console"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"led-label svelte-130rj6y\">idle</span>",
-          "target": [
-            ".led-label"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#e4572e",
-                "contrastRatio": 3.68,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<button type=\"button\" class=\"start-btn svelte-t923q5\">Start microphone test</button>",
-                  "target": [
-                    ".start-btn"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 3.68 (foreground color: #ffffff, background color: #e4572e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<button type=\"button\" class=\"start-btn svelte-t923q5\">Start microphone test</button>",
-          "target": [
-            ".start-btn"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.68 (foreground color: #ffffff, background color: #e4572e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
-          "target": [
-            ".tm-key"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        }
-      ]
-    },
     {
       "id": "landmark-unique",
       "impact": "moderate",

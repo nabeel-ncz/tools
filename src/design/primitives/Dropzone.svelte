@@ -88,7 +88,7 @@
   }
 
   .dropzone.dragging {
-    border-color: var(--signal);
+    border-color: var(--signal-text);
     background: color-mix(in srgb, var(--signal) 6%, var(--bg-raised));
     color: var(--fg);
   }

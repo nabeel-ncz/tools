@@ -442,8 +442,8 @@
   }
 
   .toggle.active {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .rec-btn,
@@ -453,7 +453,7 @@
     align-items: center;
     gap: var(--space-2);
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -513,7 +513,7 @@
     gap: var(--space-2);
     background: transparent;
     border: 1px solid var(--signal);
-    color: var(--signal);
+    color: var(--signal-text);
     padding: var(--space-2) var(--space-4);
     cursor: pointer;
     border-radius: var(--radius-md);

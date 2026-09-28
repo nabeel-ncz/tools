@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:19:44.927Z",
-  "url": "http://127.0.0.1:5008/devices/",
+  "timestamp": "2026-09-28T16:55:45.530Z",
+  "url": "http://127.0.0.1:5022/devices/",
   "toolOptions": {
     "reporter": "v1"
   },

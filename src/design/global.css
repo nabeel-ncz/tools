@@ -65,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: var(--signal);
+  color: var(--signal-text);
 }
 
 code,

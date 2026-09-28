@@ -195,14 +195,14 @@
   }
 
   .tray-actions .remove:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .run-btn,
   .download-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -224,7 +224,7 @@
   }
 
   .error {
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
   }
 </style>

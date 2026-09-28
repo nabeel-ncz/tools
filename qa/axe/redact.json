@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:20:10.808Z",
-  "url": "http://127.0.0.1:5008/redact/",
+  "timestamp": "2026-09-28T16:55:53.807Z",
+  "url": "http://127.0.0.1:5022/redact/",
   "toolOptions": {
     "reporter": "v1"
   },
@@ -3157,6 +3157,31 @@
             {
               "id": "color-contrast",
               "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
+          "target": [
+            ".tm-key"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
                 "fgColor": "#141413",
                 "bgColor": "#eae5d9",
                 "contrastRatio": 14.66,
@@ -3175,6 +3200,31 @@
           "html": "<span class=\"readout tm-value svelte-1d15ga6\">0 bytes</span>",
           "target": [
             ".tm-value"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-engine readout svelte-1d15ga6\">Loads a small PDF engine on first use, then works offline.</span>",
+          "target": [
+            ".tm-engine"
           ]
         }
       ]
@@ -6277,7 +6327,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"Z2aNgj3\" component-url=\"/_astro/Redact.BZru4cG7.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"Redact\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"Z2aNgj3\" component-url=\"/_astro/Redact.BiWXtOyV.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"Redact\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"Z2aNgj3\"]"
           ]
@@ -6397,7 +6447,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"2fup83\" component-url=\"/_astro/TrustMeter.C...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"engineLabel\":[0,\"L...\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\"...\" await-children=\"\">",
+          "html": "<astro-island uid=\"2fup83\" component-url=\"/_astro/TrustMeter.l...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"engineLabel\":[0,\"L...\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\"...\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"2fup83\"]"
           ]
@@ -9607,95 +9657,6 @@
     }
   ],
   "violations": [
-    {
-      "id": "color-contrast",
-      "impact": "serious",
-      "tags": [
-        "cat.color",
-        "wcag2aa",
-        "wcag143",
-        "TTv5",
-        "TT13.c",
-        "EN-301-549",
-        "EN-9.1.4.3",
-        "ACT",
-        "RGAAv4",
-        "RGAA-3.2.1"
-      ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
-          "target": [
-            ".tm-key"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-engine readout svelte-1d15ga6\">Loads a small PDF engine on first use, then works offline.</span>",
-          "target": [
-            ".tm-engine"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        }
-      ]
-    },
     {
       "id": "landmark-unique",
       "impact": "moderate",

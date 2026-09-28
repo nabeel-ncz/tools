@@ -292,17 +292,17 @@
   }
 
   .lang-chip.checked {
-    border-color: var(--signal);
+    border-color: var(--signal-text);
     color: var(--fg);
   }
 
   .lang-chip input {
-    accent-color: var(--signal);
+    accent-color: var(--signal-text);
   }
 
   .error-msg {
     margin: var(--space-3) 0 0;
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
     display: flex;
     align-items: center;
@@ -385,8 +385,8 @@
   }
 
   .ghost-btn:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .ghost-btn:disabled {

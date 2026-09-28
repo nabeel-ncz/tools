@@ -14,6 +14,11 @@
   --color-line-strong: #141413;
   --color-signal: #e4572e;
   --color-signal-ink: #ffffff;
+  /* Darker than --color-signal specifically for text set on --bg/--bg-raised —
+     the brand vermilion itself is 3.3-3.7:1 there, below WCAG AA (4.5:1) for
+     normal text. Used only where --signal is rendered AS text color; borders,
+     LEDs, dial pointers, and backgrounds keep the brand --color-signal as-is. */
+  --color-signal-text: #b23a14;
 
   /* Semantic aliases */
   --bg: var(--color-paper);
@@ -25,6 +30,7 @@
   --border-strong: var(--color-line-strong);
   --signal: var(--color-signal);
   --signal-fg: var(--color-signal-ink);
+  --signal-text: var(--color-signal-text);
   --focus-ring: var(--color-signal);
 
   /* Type roles */
@@ -77,6 +83,7 @@
     --color-ink-faint: #97938c;
     --color-line: #3a3a37;
     --color-line-strong: #f4f1ea;
+    --color-signal-text: #ff8a64;
     --shadow-instrument: 0 1px 0 var(--border), 0 1px 2px rgba(0, 0, 0, 0.4);
   }
 }
@@ -89,6 +96,7 @@
   --color-ink-faint: #97938c;
   --color-line: #3a3a37;
   --color-line-strong: #f4f1ea;
+  --color-signal-text: #ff8a64;
   --shadow-instrument: 0 1px 0 var(--border), 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 

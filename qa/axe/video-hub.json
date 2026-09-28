@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:19:40.687Z",
-  "url": "http://127.0.0.1:5008/video/",
+  "timestamp": "2026-09-28T16:55:42.871Z",
+  "url": "http://127.0.0.1:5022/video/",
   "toolOptions": {
     "reporter": "v1"
   },
@@ -4232,7 +4232,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"2wJHSI\" component-url=\"/_astro/CommandPalet...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"items\":[1,[[0,{\"ti...\" ssr=\"\" client=\"idle\" opts=\"{\"name\":\"CommandPale...\" await-children=\"\">",
+          "html": "<astro-island uid=\"2wJHSI\" component-url=\"/_astro/CommandPalet...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"items\":[1,[[0,{\"ti...\" client=\"idle\" opts=\"{\"name\":\"CommandPale...\" await-children=\"\">",
           "target": [
             "astro-island"
           ]

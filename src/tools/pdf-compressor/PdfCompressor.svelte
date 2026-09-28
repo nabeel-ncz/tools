@@ -259,7 +259,7 @@
 
   .run-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -314,7 +314,7 @@
   }
 
   .error {
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
   }
 </style>

@@ -770,8 +770,8 @@
   }
 
   .ghost-btn:hover:not(:disabled) {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .ghost-btn:disabled {
@@ -816,8 +816,8 @@
   }
 
   .notice.error {
-    color: var(--signal);
-    border-color: var(--signal);
+    color: var(--signal-text);
+    border-color: var(--signal-text);
   }
 
   .transfers {

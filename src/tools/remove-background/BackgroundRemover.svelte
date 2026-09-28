@@ -347,8 +347,8 @@
   }
 
   .remove-btn:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .result {
@@ -369,7 +369,7 @@
     display: inline-flex;
     align-items: center;
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -400,8 +400,8 @@
 
   .secondary-btn:hover,
   .reset-btn:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .secondary-btn:disabled,
@@ -411,7 +411,7 @@
   }
 
   .error {
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
     margin: 0;
   }

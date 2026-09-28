@@ -449,13 +449,13 @@
 
   .sig-actions .primary {
     background: var(--signal);
-    color: #fff;
-    border-color: var(--signal);
+    color: var(--color-ink);
+    border-color: var(--signal-text);
   }
 
   .remove-btn {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .page-area {
@@ -535,7 +535,7 @@
   .run-btn,
   .download-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -569,7 +569,7 @@
   }
 
   .error {
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
   }
 

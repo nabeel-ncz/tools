@@ -318,7 +318,7 @@
   }
 
   .swatch.active {
-    border-color: var(--signal);
+    border-color: var(--signal-text);
   }
 
   select {
@@ -351,7 +351,7 @@
 
   .export-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);

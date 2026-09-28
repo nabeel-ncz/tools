@@ -476,7 +476,7 @@
 
   .error-msg {
     margin: var(--space-3) 0 0;
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
     display: flex;
     align-items: center;
@@ -646,8 +646,8 @@
   }
 
   .ghost-btn:hover {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
   }
 
   .ghost-btn:disabled {

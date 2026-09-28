@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:19:49.805Z",
-  "url": "http://127.0.0.1:5008/file-drop/",
+  "timestamp": "2026-09-28T16:55:47.556Z",
+  "url": "http://127.0.0.1:5022/file-drop/",
   "toolOptions": {
     "reporter": "v1"
   },
@@ -3542,6 +3542,81 @@
             {
               "id": "color-contrast",
               "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#f4f1ea",
+                "contrastRatio": 5.31,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 5.31"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"device-label readout svelte-mn7wj9\">This device</span>",
+          "target": [
+            ".device[aria-hidden=\"true\"]:nth-child(1) > .device-label.readout"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#f4f1ea",
+                "contrastRatio": 5.31,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 5.31"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"device-label readout svelte-mn7wj9\">Peer</span>",
+          "target": [
+            ".device[aria-hidden=\"true\"]:nth-child(3) > .device-label.readout"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#f4f1ea",
+                "contrastRatio": 5.31,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 5.31"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"led-label svelte-130rj6y\">Connection failed</span>",
+          "target": [
+            ".led-label"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
                 "fgColor": "#4a4842",
                 "bgColor": "#eae5d9",
                 "contrastRatio": 7.27,
@@ -3582,7 +3657,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"code readout svelte-mn7wj9\">79HNER</p>",
+          "html": "<p class=\"code readout svelte-mn7wj9\">B44KYV</p>",
           "target": [
             ".code"
           ]
@@ -3617,6 +3692,31 @@
             {
               "id": "color-contrast",
               "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<summary class=\"svelte-mn7wj9\">Joining a session instead?</summary>",
+          "target": [
+            "summary"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
                 "messageKey": "hidden"
               },
               "relatedNodes": [],
@@ -3630,6 +3730,56 @@
           "html": "<input id=\"join-code\" type=\"text\" inputmode=\"text\" autocomplete=\"off\" maxlength=\"8\" placeholder=\"ABC123\" class=\"svelte-mn7wj9\">",
           "target": [
             "#join-code"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#b23a14",
+                "bgColor": "#f4f1ea",
+                "contrastRatio": 5.3,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 5.3"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<p class=\"notice error svelte-mn7wj9\" role=\"alert\">Signaling connection error.</p>",
+          "target": [
+            ".notice"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
+          "target": [
+            ".tm-key"
           ]
         },
         {
@@ -6775,7 +6925,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"Z1mSJla\" component-url=\"/_astro/FileDrop.CasqkLdj.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"FileDrop\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"Z1mSJla\" component-url=\"/_astro/FileDrop.XoLbgKaj.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"FileDrop\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"Z1mSJla\"]"
           ]
@@ -7035,7 +7185,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"code readout svelte-mn7wj9\">79HNER</p>",
+          "html": "<p class=\"code readout svelte-mn7wj9\">B44KYV</p>",
           "target": [
             ".code"
           ]
@@ -7235,7 +7385,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"JvJkd\" component-url=\"/_astro/TrustMeter.CYLe4Gt2.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"engineLabel\":[0],\"data-astro-cid-mqzpnqfb\":[0,true]}\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"JvJkd\" component-url=\"/_astro/TrustMeter.lBvV7Cfn.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"engineLabel\":[0],\"data-astro-cid-mqzpnqfb\":[0,true]}\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"JvJkd\"]"
           ]
@@ -10359,231 +10509,6 @@
     }
   ],
   "violations": [
-    {
-      "id": "color-contrast",
-      "impact": "serious",
-      "tags": [
-        "cat.color",
-        "wcag2aa",
-        "wcag143",
-        "TTv5",
-        "TT13.c",
-        "EN-301-549",
-        "EN-9.1.4.3",
-        "ACT",
-        "RGAAv4",
-        "RGAA-3.2.1"
-      ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#f4f1ea",
-                "contrastRatio": 3.22,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"stage svelte-mn7wj9\">",
-                  "target": [
-                    ".stage"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"device-label readout svelte-mn7wj9\">This device</span>",
-          "target": [
-            ".device[aria-hidden=\"true\"]:nth-child(1) > .device-label.readout"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#f4f1ea",
-                "contrastRatio": 3.22,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"stage svelte-mn7wj9\">",
-                  "target": [
-                    ".stage"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"device-label readout svelte-mn7wj9\">Peer</span>",
-          "target": [
-            ".device[aria-hidden=\"true\"]:nth-child(3) > .device-label.readout"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#f4f1ea",
-                "contrastRatio": 3.22,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"stage svelte-mn7wj9\">",
-                  "target": [
-                    ".stage"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"led-label svelte-130rj6y\">Connection failed</span>",
-          "target": [
-            ".led-label"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.22 (foreground color: #8a867b, background color: #f4f1ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"console svelte-mn7wj9\">",
-                  "target": [
-                    ".console"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<summary class=\"svelte-mn7wj9\">Joining a session instead?</summary>",
-          "target": [
-            "summary"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#e4572e",
-                "bgColor": "#f4f1ea",
-                "contrastRatio": 3.26,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<p class=\"notice error svelte-mn7wj9\" role=\"alert\">Signaling connection error.</p>",
-                  "target": [
-                    ".notice"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 3.26 (foreground color: #e4572e, background color: #f4f1ea, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<p class=\"notice error svelte-mn7wj9\" role=\"alert\">Signaling connection error.</p>",
-          "target": [
-            ".notice"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #e4572e, background color: #f4f1ea, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
-          "target": [
-            ".tm-key"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        }
-      ]
-    },
     {
       "id": "landmark-unique",
       "impact": "moderate",

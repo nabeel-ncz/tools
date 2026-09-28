@@ -149,8 +149,8 @@
 
   .split-lens.dragging .handle,
   .handle:focus-visible {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--signal-text);
+    color: var(--signal-text);
     outline: none;
   }
 

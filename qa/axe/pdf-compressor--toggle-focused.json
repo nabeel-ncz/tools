@@ -13,8 +13,8 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-09-28T16:20:39.738Z",
-  "url": "http://127.0.0.1:5008/pdf-compressor/",
+  "timestamp": "2026-09-28T16:56:06.349Z",
+  "url": "http://127.0.0.1:5022/pdf-compressor/",
   "toolOptions": {
     "reporter": "v1"
   },
@@ -3157,6 +3157,31 @@
             {
               "id": "color-contrast",
               "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
+          "target": [
+            ".tm-key"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
                 "fgColor": "#141413",
                 "bgColor": "#eae5d9",
                 "contrastRatio": 14.66,
@@ -3175,6 +3200,31 @@
           "html": "<span class=\"readout tm-value svelte-1d15ga6\">0 bytes</span>",
           "target": [
             ".tm-value"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#66635b",
+                "bgColor": "#eae5d9",
+                "contrastRatio": 4.77,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 4.77"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"tm-engine readout svelte-1d15ga6\">Loads a small PDF engine on first use, then works offline.</span>",
+          "target": [
+            ".tm-engine"
           ]
         }
       ]
@@ -3312,7 +3362,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">What if compression doesn't actually shrink my file?</dt>",
           "target": [
             ".faq-item:nth-child(2) > dt"
           ]
@@ -3330,7 +3380,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It never hands back something larger than what you gave it. If a page's re-encoded version would be bigger — which can happen on simple, low-detail pages — that page keeps its original bytes instead.</dd>",
           "target": [
             ".faq-item:nth-child(2) > dd"
           ]
@@ -3348,7 +3398,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
           "target": [
             ".faq-item:nth-child(3) > dt"
           ]
@@ -3366,9 +3416,45 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
           "target": [
             ".faq-item:nth-child(3) > dd"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "dlitem",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Description list item has a <dl> parent element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "target": [
+            ".faq-item:nth-child(4) > dt"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "dlitem",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Description list item has a <dl> parent element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "target": [
+            ".faq-item:nth-child(4) > dd"
           ]
         },
         {
@@ -5334,7 +5420,7 @@
           "impact": null,
           "html": "<li data-astro-cid-mqzpnqfb=\"\">Download the compressed file, or export all as a zip if you added several.</li>",
           "target": [
-            "li:nth-child(4)"
+            ".steps > li:nth-child(4)"
           ]
         },
         {
@@ -5389,6 +5475,24 @@
           "html": "<li data-astro-cid-mqzpnqfb=\"\">If Aggressive still looks close in size to Light, the source PDF probably already has heavily compressed images — there isn't much left to save.</li>",
           "target": [
             ".tips > li:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "listitem",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<li data-astro-cid-mqzpnqfb=\"\">For a source that's mostly flat color or line art rather than a photo, re-encoding can occasionally come out larger than the original — this tool checks for that and hands back the original file unchanged rather than a 'compressed' file that's actually bigger.</li>",
+          "target": [
+            ".tips > li:nth-child(4)"
           ]
         },
         {
@@ -6277,7 +6381,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"Z1cQKaV\" component-url=\"/_astro/PdfCompressor.dnyOjh-b.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"PdfCompressor\",\"value\":true}\" await-children=\"\">",
+          "html": "<astro-island uid=\"Z1cQKaV\" component-url=\"/_astro/PdfCompressor.Cc4WiFxE.js\" component-export=\"default\" renderer-url=\"/_astro/client.svelte.D7ZdEcl9.js\" props=\"{\"slot\":[0,\"tool\"]}\" client=\"visible\" opts=\"{\"name\":\"PdfCompressor\",\"value\":true}\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"Z1cQKaV\"]"
           ]
@@ -6397,7 +6501,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<astro-island uid=\"2fup83\" component-url=\"/_astro/TrustMeter.C...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"engineLabel\":[0,\"L...\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\"...\" await-children=\"\">",
+          "html": "<astro-island uid=\"2fup83\" component-url=\"/_astro/TrustMeter.l...\" component-export=\"default\" renderer-url=\"/_astro/client.svelt...\" props=\"{\"engineLabel\":[0,\"L...\" client=\"visible\" opts=\"{\"name\":\"TrustMeter\"...\" await-children=\"\">",
           "target": [
             "astro-island[uid=\"2fup83\"]"
           ]
@@ -6739,7 +6843,7 @@
           "impact": null,
           "html": "<li data-astro-cid-mqzpnqfb=\"\">Download the compressed file, or export all as a zip if you added several.</li>",
           "target": [
-            "li:nth-child(4)"
+            ".steps > li:nth-child(4)"
           ]
         },
         {
@@ -6860,6 +6964,26 @@
           "html": "<li data-astro-cid-mqzpnqfb=\"\">If Aggressive still looks close in size to Light, the source PDF probably already has heavily compressed images — there isn't much left to save.</li>",
           "target": [
             ".tips > li:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<li data-astro-cid-mqzpnqfb=\"\">For a source that's mostly flat color or line art rather than a photo, re-encoding can occasionally come out larger than the original — this tool checks for that and hands back the original file unchanged rather than a 'compressed' file that's actually bigger.</li>",
+          "target": [
+            ".tips > li:nth-child(4)"
           ]
         },
         {
@@ -7017,7 +7141,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">What if compression doesn't actually shrink my file?</dt>",
           "target": [
             ".faq-item:nth-child(2) > dt"
           ]
@@ -7037,7 +7161,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It never hands back something larger than what you gave it. If a page's re-encoded version would be bigger — which can happen on simple, low-detail pages — that page keeps its original bytes instead.</dd>",
           "target": [
             ".faq-item:nth-child(2) > dd"
           ]
@@ -7057,7 +7181,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<div class=\"faq-item\" data-astro-cid-mqzpnqfb=\"\"> <dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt> <dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd> </div>",
+          "html": "<div class=\"faq-item\" data-astro-cid-mqzpnqfb=\"\">",
           "target": [
             ".faq-item:nth-child(3)"
           ]
@@ -7077,7 +7201,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
           "target": [
             ".faq-item:nth-child(3) > dt"
           ]
@@ -7097,9 +7221,69 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
           "target": [
             ".faq-item:nth-child(3) > dd"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div class=\"faq-item\" data-astro-cid-mqzpnqfb=\"\"> <dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt> <dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd> </div>",
+          "target": [
+            ".faq-item:nth-child(4)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "target": [
+            ".faq-item:nth-child(4) > dt"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "target": [
+            ".faq-item:nth-child(4) > dd"
           ]
         },
         {
@@ -8383,7 +8567,7 @@
           "impact": "serious",
           "html": "<li data-astro-cid-mqzpnqfb=\"\">Download the compressed file, or export all as a zip if you added several.</li>",
           "target": [
-            "li:nth-child(4)"
+            ".steps > li:nth-child(4)"
           ],
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
         },
@@ -8521,6 +8705,38 @@
               "id": "color-contrast",
               "data": {
                 "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<body>",
+                  "target": [
+                    "body"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined due to a background gradient"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<li data-astro-cid-mqzpnqfb=\"\">For a source that's mostly flat color or line art rather than a photo, re-encoding can occasionally come out larger than the original — this tool checks for that and hands back the original file unchanged rather than a 'compressed' file that's actually bigger.</li>",
+          "target": [
+            ".tips > li:nth-child(4)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
                 "fontSize": "22.5pt (30px)",
                 "fontWeight": "normal",
                 "messageKey": "bgGradient",
@@ -8637,7 +8853,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">What if compression doesn't actually shrink my file?</dt>",
           "target": [
             ".faq-item:nth-child(2) > dt"
           ],
@@ -8669,7 +8885,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It never hands back something larger than what you gave it. If a page's re-encoded version would be bigger — which can happen on simple, low-detail pages — that page keeps its original bytes instead.</dd>",
           "target": [
             ".faq-item:nth-child(2) > dd"
           ],
@@ -8701,7 +8917,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">How much smaller will my file get?</dt>",
           "target": [
             ".faq-item:nth-child(3) > dt"
           ],
@@ -8733,9 +8949,73 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.</dd>",
           "target": [
             ".faq-item:nth-child(3) > dd"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "13.5pt (18px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<body>",
+                  "target": [
+                    "body"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined due to a background gradient"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<dt data-astro-cid-mqzpnqfb=\"\">Is there a page limit?</dt>",
+          "target": [
+            ".faq-item:nth-child(4) > dt"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<body>",
+                  "target": [
+                    "body"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined due to a background gradient"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<dd data-astro-cid-mqzpnqfb=\"\">No fixed limit — it's set by your browser's available memory, not a server-side cap.</dd>",
+          "target": [
+            ".faq-item:nth-child(4) > dd"
           ],
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
         },
@@ -9607,95 +9887,6 @@
     }
   ],
   "violations": [
-    {
-      "id": "color-contrast",
-      "impact": "serious",
-      "tags": [
-        "cat.color",
-        "wcag2aa",
-        "wcag143",
-        "TTv5",
-        "TT13.c",
-        "EN-301-549",
-        "EN-9.1.4.3",
-        "ACT",
-        "RGAAv4",
-        "RGAA-3.2.1"
-      ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-key svelte-1d15ga6\">Uploaded</span>",
-          "target": [
-            ".tm-key"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#8a867b",
-                "bgColor": "#eae5d9",
-                "contrastRatio": 2.89,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "normal",
-                "messageKey": null,
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<div class=\"trust-meter svelte-1d15ga6\">",
-                  "target": [
-                    ".trust-meter"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"tm-engine readout svelte-1d15ga6\">Loads a small PDF engine on first use, then works offline.</span>",
-          "target": [
-            ".tm-engine"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #8a867b, background color: #eae5d9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
-        }
-      ]
-    },
     {
       "id": "landmark-unique",
       "impact": "moderate",

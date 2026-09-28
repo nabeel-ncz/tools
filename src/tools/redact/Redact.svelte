@@ -248,7 +248,7 @@
 
   .page-flag {
     margin-left: var(--space-2);
-    color: var(--signal);
+    color: var(--signal-text);
     text-transform: uppercase;
     font-size: var(--text-xs);
     letter-spacing: 0.04em;
@@ -301,7 +301,7 @@
     height: 16px;
     border-radius: 50%;
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     font-size: 11px;
     line-height: 1;
@@ -310,7 +310,7 @@
 
   .run-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -345,7 +345,7 @@
 
   .download-btn {
     background: var(--signal);
-    color: #fff;
+    color: var(--color-ink);
     border: none;
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
@@ -366,7 +366,7 @@
   }
 
   .error {
-    color: var(--signal);
+    color: var(--signal-text);
     font-size: var(--text-sm);
   }
 </style>
