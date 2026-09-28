@@ -19,19 +19,19 @@ steps:
 specs:
   formats: ["MP4", "WebM", "MOV/AVI/MKV as input", "GIF export"]
   maxSize: "Depends on device RAM — ffmpeg.wasm holds the working file in memory; very large 4K files may be slow or fail on low-memory devices."
-  browserSupport: "Chrome, Edge, and Firefox with SharedArrayBuffer support (required for multithreaded encoding). Safari support is more limited."
+  browserSupport: "Any modern browser with WebAssembly support (Chrome, Edge, Firefox, Safari). Runs on a single-threaded encoder today, so it works the same everywhere without needing cross-origin isolation."
   mobileNote: "Works on capable phones but is significantly slower than desktop; large files may run out of memory on older devices."
 tips:
   - "Trimming happens before compressing, so cutting a long recording down first is the fastest way to shrink a file — you're not re-encoding footage you don't need."
   - "GIF export is best for short clips under ~10 seconds; GIF has no real compression for motion, so longer exports get large fast."
-  - "If export is slow, check whether your browser supports SharedArrayBuffer — without it, ffmpeg.wasm falls back to a single-threaded, slower path."
+  - "The encoder runs single-threaded today, so speed is mostly a function of your CPU and the video's length/resolution rather than any browser setting you need to check."
 faq:
   - q: "Is my video uploaded to a server to compress it?"
     a: "No — this runs ffmpeg compiled to WebAssembly, executing entirely inside your browser tab. The Trust Meter confirms nothing is sent over the network during processing."
   - q: "How long does compression take?"
     a: "Roughly proportional to video length and your device's CPU — expect it to take a noticeable fraction of the video's own runtime, longer on older hardware."
   - q: "Why does the tool need to download something first?"
-    a: "The ffmpeg engine itself is a ~30MB WebAssembly module. It's fetched once and cached by your browser, so repeat visits skip the download."
+    a: "The ffmpeg engine itself is a ~30MB WebAssembly module, served from this site (not a third-party CDN). It's fetched once and cached by your browser, so repeat visits skip the download."
 related:
   - "screen-recorder"
   - "webcam-test"

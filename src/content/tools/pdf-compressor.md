@@ -25,9 +25,12 @@ tips:
   - "A PDF made of scanned pages barely shrinks with a compressor that only touches metadata — the file is already one image per page. This tool re-renders every page at your chosen resolution, which is where the real savings come from on scanned documents."
   - "This tool rasterizes each page to a compressed image, so it shrinks image-heavy and scanned PDFs the most. If you need the result to stay searchable and selectable, use Light and check the output, or skip compression for text-only documents that are already small."
   - "If Aggressive still looks close in size to Light, the source PDF probably already has heavily compressed images — there isn't much left to save."
+  - "For a source that's mostly flat color or line art rather than a photo, re-encoding can occasionally come out larger than the original — this tool checks for that and hands back the original file unchanged rather than a 'compressed' file that's actually bigger."
 faq:
   - q: "Will compressing make my text blurry or unselectable?"
     a: "Compression re-renders each page as an image at your chosen quality, so text stays sharp at Light and Balanced but is no longer selectable or searchable afterward — the same trade-off as scanning a printed page. Keep an uncompressed copy if you need selectable text."
+  - q: "What if compression doesn't actually shrink my file?"
+    a: "It never hands back something larger than what you gave it. If a page's re-encoded version would be bigger — which can happen on simple, low-detail pages — that page keeps its original bytes instead."
   - q: "How much smaller will my file get?"
     a: "It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less."
   - q: "Is there a page limit?"
