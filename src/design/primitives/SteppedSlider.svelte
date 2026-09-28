@@ -85,6 +85,21 @@
     outline: none;
   }
 
+  /* The rule above removes the native focus outline (needed since the
+     browser draws it as a box around the whole 100%-width track, not the
+     thumb). Restore a visible keyboard-focus indicator on the thumb itself,
+     matching the site's global :focus-visible ring — without this, tabbing
+     to a slider left no visible indication of which control was focused. */
+  input[type='range']:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  input[type='range']:focus-visible::-moz-range-thumb {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;

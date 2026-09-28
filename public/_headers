@@ -14,7 +14,24 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), display-capture=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self'; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self'; manifest-src 'self'
+
+# Every built asset gets Cross-Origin-Resource-Policy AND
+# Cross-Origin-Embedder-Policy. Both are required for the COOP/COEP pages
+# below — tested live (upload a file, click the action button, watch
+# network requests) and found that Video Compressor's self-hosted ffmpeg
+# worker script (/_astro/worker-*.js) failed with ERR_BLOCKED_BY_RESPONSE
+# under COEP with only one of the two set: Chrome's require-corp blocks any
+# response without a CORP header (even same-origin), AND separately requires
+# a Worker's own script response to carry its own COEP header before the
+# worker is allowed to load under a COEP-enabled page. With both headers
+# here, the ffmpeg worker (and onnxruntime-web's worker, for the two ONNX
+# tool pages below) load cleanly — re-verified with the same live test.
+# Harmless on every other page too, since nothing here is meant to be
+# embedded by a different origin anyway.
+/_astro/*
+  Cross-Origin-Resource-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
 
 # Background Remover and Image Upscaler fetch their ONNX model weights from
 # Hugging Face at runtime (the WASM inference backend itself is self-hosted,
@@ -27,21 +44,23 @@
 # report's COOP/COEP test notes.
 /remove-background/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
 /image-upscaler/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
 # Video Compressor's ffmpeg.wasm core is fully self-hosted (no CSP change
 # needed from the site default) — COOP/COEP is added here so a future
 # switch to the multithreaded @ffmpeg/core-mt build can use
-# SharedArrayBuffer. Confirmed harmless: the page's only network fetch is
-# same-origin.
+# SharedArrayBuffer. Verified live: uploaded a video, clicked Export, and
+# confirmed self.crossOriginIsolated === true with the ffmpeg worker/core/
+# wasm all loading with zero failed or CSP/COEP-blocked requests (see the
+# /_astro/* block above — that fix was required for this to work).
 /video-compressor/*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
@@ -53,23 +72,30 @@
 # Cross-Origin-Resource-Policy header, which COEP:require-corp would block.
 /ocr/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net; manifest-src 'self'
 
 # Transcriber: @huggingface/transformers fetches Whisper model weights from
 # Hugging Face and, since no wasmPaths override is set in Transcriber.svelte,
 # falls back to jsdelivr for its internal onnxruntime-web WASM backend too.
 /transcribe/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
 
 # File Drop: WebRTC signaling — wss://signal.tools.nabl.in once
 # workers/filedrop is deployed and PUBLIC_SIGNALING_URL is set at build time
 # (src/tools/file-drop/FileDrop.svelte); until then it falls back to
-# same-origin wss://<host>/ws/filedrop, already covered by 'self' — plus the
-# public STUN server used for ICE negotiation.
+# same-origin wss://<host>/ws/filedrop, already covered by 'self'. The public
+# STUN server (stun:stun.l.google.com:19302) used for ICE negotiation is
+# deliberately NOT listed in connect-src: tested live and confirmed Chrome
+# rejects "stun:host:port" as an invalid CSP source-list entry (STUN URIs
+# use a bare scheme:host:port, not CSP's scheme://host:port grammar) — it's
+# silently dropped from the policy with a console warning, so including it
+# does nothing. connect-src does not gate WebRTC ICE/STUN candidate
+# gathering in current Chrome regardless, so no source-list entry is needed
+# for it to keep working.
 /file-drop/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' wss://signal.tools.nabl.in stun:stun.l.google.com:19302; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' wss://signal.tools.nabl.in; manifest-src 'self'
 
 # Camera / microphone / screen-capture permissions, scoped to only the tool
 # pages whose Svelte components actually call getUserMedia/getDisplayMedia
