@@ -447,7 +447,7 @@
   }
 
   .rec-btn,
-  .viewfinder-overlay button,
+  .viewfinder-overlay button:not(.toggle),
   .download-btn {
     display: inline-flex;
     align-items: center;
