@@ -1,0 +1,25 @@
+# File Drop signaling server — Cloudflare Worker + Durable Object.
+#
+# This Worker relays WebRTC signaling messages only (SDP/ICE); it never
+# sees file bytes. See README.md for deployment steps.
+
+name = "nabl-filedrop-signaling"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# TODO(owner): point this at the real production domain once one is
+# available, then uncomment. Until a route is configured, the Worker is
+# only reachable at its workers.dev URL, and the site's
+# PUBLIC_SIGNALING_URL build-time env var must be set to match wherever it
+# actually ends up deployed.
+# routes = [
+#   { pattern = "signal.tools.nabl.in/*", custom_domain = true }
+# ]
+
+[[durable_objects.bindings]]
+name = "SESSION_DO"
+class_name = "FileDropSession"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["FileDropSession"]

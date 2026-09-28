@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import VideoCompressor from '../tools/video-compressor/VideoCompressor.svelte';
+
+const tool = await getEntry('tools', 'video-compressor');
+if (!tool) throw new Error('Missing tools/video-compressor content entry');
+---
+
+<ToolLayout tool={tool}>
+  <VideoCompressor slot="tool" client:visible />
+</ToolLayout>

@@ -97,5 +97,16 @@ const jsonLdBlocks = [...siteJsonLd, ...(breadcrumbJsonLd ? [breadcrumbJsonLd] :
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // Register the offline/app-shell service worker. Guarded so it's a
+      // no-op on browsers without support (this is a raw is:inline script,
+      // so it can't use import.meta.env — registration itself is harmless
+      // in `astro dev`, which serves /sw.js straight from public/ too).
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

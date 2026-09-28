@@ -13,8 +13,8 @@ metaDescription: "Merge PDF Files Online — Free, Private, No Upload | NABL Too
 engineNote: "Loads a small PDF engine on first use, then works offline."
 steps:
   - "Drop two or more PDFs onto the tray."
-  - "Drag the thumbnails to set the final order."
-  - "Remove any page-level items you don't want, if you expanded a file's pages."
+  - "Drag a file card, or use its up/down buttons, to set the final order."
+  - "Remove any file you don't want to include."
   - "Click Merge and download the combined PDF."
 specs:
   formats: ["PDF"]
@@ -31,7 +31,7 @@ faq:
   - q: "Does merging change the quality of the pages?"
     a: "No. Pages are copied as-is; nothing is re-rendered or recompressed during a merge."
   - q: "Can I reorder individual pages, not just whole files?"
-    a: "Yes — expand a file in the tray to see its pages and drag them individually."
+    a: "Not yet — this tool reorders whole source files. To drop or reorder individual pages, split the file first, or merge and then use the split tool to trim the result."
 related:
   - "split-pdf"
   - "pdf-compressor"

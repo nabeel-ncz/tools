@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ImageUpscaler from '../tools/image-upscaler/ImageUpscaler.svelte';
+
+const tool = await getEntry('tools', 'image-upscaler');
+if (!tool) throw new Error('Missing tools/image-upscaler content entry');
+---
+
+<ToolLayout tool={tool}>
+  <ImageUpscaler slot="tool" client:visible />
+</ToolLayout>

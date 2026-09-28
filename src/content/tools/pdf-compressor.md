@@ -8,7 +8,7 @@ keywordVariants:
   - "reduce pdf file size"
   - "shrink pdf without losing quality"
   - "compress pdf no upload"
-oneLine: "Shrink a PDF's file size by recompressing its embedded images — nothing is uploaded to do it."
+oneLine: "Shrink a PDF's file size by re-rendering each page at your chosen quality — nothing is uploaded to do it."
 metaDescription: "Compress PDF Online — Free, Private, No Upload | NABL Tools"
 engineNote: "Loads a small PDF engine on first use, then works offline."
 steps:
@@ -22,14 +22,14 @@ specs:
   browserSupport: "Any modern browser. Large files benefit from a desktop browser over mobile."
   mobileNote: "Works on mobile but expect slower processing on large files; keep the tab in the foreground while it runs."
 tips:
-  - "A PDF made of scanned pages barely shrinks with a normal compressor — the file is already one image per page. Real savings there come from re-rasterizing at lower resolution, which this tool's Aggressive setting does."
-  - "A PDF that's mostly vector text and line art (exported from Word, Docs, or a design tool) is usually already small; compression saves the most on PDFs with embedded photos."
-  - "If Aggressive doesn't move the size much, check whether the file already stripped its images down — you may be looking at a font-heavy or table-heavy document instead."
+  - "A PDF made of scanned pages barely shrinks with a compressor that only touches metadata — the file is already one image per page. This tool re-renders every page at your chosen resolution, which is where the real savings come from on scanned documents."
+  - "This tool rasterizes each page to a compressed image, so it shrinks image-heavy and scanned PDFs the most. If you need the result to stay searchable and selectable, use Light and check the output, or skip compression for text-only documents that are already small."
+  - "If Aggressive still looks close in size to Light, the source PDF probably already has heavily compressed images — there isn't much left to save."
 faq:
-  - q: "Will compressing reduce text quality or make it blurry?"
-    a: "No — text stays as vector text unless the whole page is a scanned image. Compression only recompresses embedded raster images."
+  - q: "Will compressing make my text blurry or unselectable?"
+    a: "Compression re-renders each page as an image at your chosen quality, so text stays sharp at Light and Balanced but is no longer selectable or searchable afterward — the same trade-off as scanning a printed page. Keep an uncompressed copy if you need selectable text."
   - q: "How much smaller will my file get?"
-    a: "It depends on content. Image-heavy PDFs often shrink 50–80%; text-only PDFs may only drop a few percent."
+    a: "It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less."
   - q: "Is there a page limit?"
     a: "No fixed limit — it's set by your browser's available memory, not a server-side cap."
 related:
@@ -40,4 +40,4 @@ status: "live"
 draftContent: true
 ---
 
-Most online PDF compressors upload your document to a server to do the work — which is a bad trade for anything containing a contract, ID, or statement. This one recompresses embedded images locally using pdf-lib and pdf.js, so the file never leaves your browser.
+Most online PDF compressors upload your document to a server to do the work — which is a bad trade for anything containing a contract, ID, or statement. This one renders each page locally with pdf.js and recompresses it into a new file with pdf-lib, so the document never leaves your browser.

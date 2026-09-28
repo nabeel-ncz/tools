@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import BackgroundRemover from '../tools/remove-background/BackgroundRemover.svelte';
+
+const tool = await getEntry('tools', 'remove-background');
+if (!tool) throw new Error('Missing tools/remove-background content entry');
+---
+
+<ToolLayout tool={tool}>
+  <BackgroundRemover slot="tool" client:visible />
+</ToolLayout>

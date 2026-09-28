@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import Ocr from '../tools/ocr/Ocr.svelte';
+
+const tool = await getEntry('tools', 'ocr');
+if (!tool) throw new Error('Missing tools/ocr content entry');
+---
+
+<ToolLayout tool={tool}>
+  <Ocr slot="tool" client:visible />
+</ToolLayout>

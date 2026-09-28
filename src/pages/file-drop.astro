@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import FileDrop from '../tools/file-drop/FileDrop.svelte';
+
+const tool = await getEntry('tools', 'file-drop');
+if (!tool) throw new Error('Missing tools/file-drop content entry');
+---
+
+<ToolLayout tool={tool}>
+  <FileDrop slot="tool" client:visible />
+</ToolLayout>

@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import SignPdf from '../tools/sign-pdf/SignPdf.svelte';
+
+const tool = await getEntry('tools', 'sign-pdf');
+if (!tool) throw new Error('Missing tools/sign-pdf content entry');
+---
+
+<ToolLayout tool={tool}>
+  <SignPdf slot="tool" client:visible />
+</ToolLayout>
