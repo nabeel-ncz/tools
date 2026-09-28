@@ -12,7 +12,7 @@ const { tool } = Astro.props;
 const { data } = tool;
 const { Content } = await render(tool);
 
-const title = `${data.title} — Free, Private, No Upload | NABL Tools`;
+const title = `${data.title} — Free & Private | NABL Tools`;
 const categoryInfo = CATEGORIES[data.category];
 
 const allTools = await getLiveTools();

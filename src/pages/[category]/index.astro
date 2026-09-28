@@ -10,7 +10,7 @@ const { category } = Astro.params;
 const info = CATEGORIES[category as string];
 const tools = (await getLiveTools()).filter((t) => t.data.category === category);
 
-const title = `${info.title} Tools — Free, Private, No Upload | NABL Tools`;
+const title = `${info.title} Tools — Free & Private | NABL Tools`;
 const description = info.intro.slice(0, 150);
 
 const breadcrumbJsonLd = {

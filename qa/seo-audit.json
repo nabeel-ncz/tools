@@ -1,0 +1,4701 @@
+{
+  "meta": {
+    "distDir": "/home/user/tools/dist",
+    "generatedAt": "2026-09-28T16:04:40.918Z"
+  },
+  "site": {
+    "url": "https://tools.nabl.in",
+    "categories": [
+      "video",
+      "pdf",
+      "image",
+      "devices"
+    ],
+    "liveToolCount": 16
+  },
+  "pages": [
+    {
+      "urlPath": "/404.html",
+      "kind": "other",
+      "file": "dist/404.html",
+      "page": {
+        "title": "Page Not Found | NABL Tools",
+        "description": "That page doesn't exist. Find the instrument you're looking for in the catalogue below.",
+        "canonical": "https://tools.nabl.in/404/",
+        "h1s": [
+          "That instrument isn't on the bench."
+        ],
+        "og": {
+          "type": "website",
+          "title": "Page Not Found | NABL Tools",
+          "description": "That page doesn't exist. Find the instrument you're looking for in the catalogue below.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/404/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Page Not Found | NABL Tools",
+          "description": "That page doesn't exist. Find the instrument you're looking for in the catalogue below.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screen-recorder",
+          "/transcribe",
+          "/video-compressor",
+          "/remove-background",
+          "/image-upscaler",
+          "/pdf-compressor",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/about/",
+      "kind": "other",
+      "file": "dist/about/index.html",
+      "page": {
+        "title": "About | NABL Tools",
+        "description": "How local-first processing actually works in the browser — Web APIs, WebAssembly, and on-device machine learning — and why this catalogue exists.",
+        "canonical": "https://tools.nabl.in/about/",
+        "h1s": [
+          "About this catalogue"
+        ],
+        "og": {
+          "type": "website",
+          "title": "About | NABL Tools",
+          "description": "How local-first processing actually works in the browser — Web APIs, WebAssembly, and on-device machine learning — and why this catalogue exists.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/about/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "About | NABL Tools",
+          "description": "How local-first processing actually works in the browser — Web APIs, WebAssembly, and on-device machine learning — and why this catalogue exists.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"About\",\"item\":\"https://tools.nabl.in/about\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "About",
+                  "item": "https://tools.nabl.in/about"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/changelog/",
+      "kind": "other",
+      "file": "dist/changelog/index.html",
+      "page": {
+        "title": "Changelog | NABL Tools",
+        "description": "What shipped, and when — every tool added to the catalogue.",
+        "canonical": "https://tools.nabl.in/changelog/",
+        "h1s": [
+          "Changelog"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Changelog | NABL Tools",
+          "description": "What shipped, and when — every tool added to the catalogue.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/changelog/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Changelog | NABL Tools",
+          "description": "What shipped, and when — every tool added to the catalogue.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Changelog\",\"item\":\"https://tools.nabl.in/changelog\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Changelog",
+                  "item": "https://tools.nabl.in/changelog"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/devices/",
+      "kind": "hub",
+      "category": "devices",
+      "file": "dist/devices/index.html",
+      "page": {
+        "title": "Devices Tools — Free & Private | NABL Tools",
+        "description": "Test your camera and microphone, and send files directly between your own devices without a cloud in between.",
+        "canonical": "https://tools.nabl.in/devices/",
+        "h1s": [
+          "Devices"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Devices Tools — Free &#38; Private | NABL Tools",
+          "description": "Test your camera and microphone, and send files directly between your own devices without a cloud in between.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/devices/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Devices Tools — Free &#38; Private | NABL Tools",
+          "description": "Test your camera and microphone, and send files directly between your own devices without a cloud in between.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Devices\",\"item\":\"https://tools.nabl.in/devices\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Devices",
+                  "item": "https://tools.nabl.in/devices"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/webcam-test",
+          "/mic-test",
+          "/file-drop",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/favicon-generator/",
+      "kind": "tool",
+      "slug": "favicon-generator",
+      "file": "dist/favicon-generator/index.html",
+      "page": {
+        "title": "Favicon & Icon Generator — Free & Private | NABL Tools",
+        "description": "Favicon & App Icon Generator — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/favicon-generator/",
+        "h1s": [
+          "Favicon & Icon Generator"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Favicon &#38; Icon Generator — Free &#38; Private | NABL Tools",
+          "description": "Favicon &#38; App Icon Generator — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/favicon-generator.png",
+          "url": "https://tools.nabl.in/favicon-generator/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Favicon &#38; Icon Generator — Free &#38; Private | NABL Tools",
+          "description": "Favicon &#38; App Icon Generator — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/favicon-generator.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Favicon & Icon Generator\",\"item\":\"https://tools.nabl.in/favicon-generator\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Favicon & Icon Generator",
+                  "item": "https://tools.nabl.in/favicon-generator"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Favicon & Icon Generator\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Favicon & App Icon Generator — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/favicon-generator\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Favicon & Icon Generator",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Favicon & App Icon Generator — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/favicon-generator"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What sizes are included?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Standard favicon sizes (16, 32, 48px), Apple touch icons, and the full Android/Chrome maskable icon set used by manifest.json — the same list modern build tools expect.\"}},{\"@type\":\"Question\",\"name\":\"Do I need to install anything to use the output?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Unzip the folder into your site's public directory and paste the provided <link> tags into your HTML <head>.\"}},{\"@type\":\"Question\",\"name\":\"Is my source image uploaded to generate the icons?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — every resize happens on an HTML canvas in your browser. The Trust Meter will read 0 bytes uploaded throughout.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What sizes are included?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Standard favicon sizes (16, 32, 48px), Apple touch icons, and the full Android/Chrome maskable icon set used by manifest.json — the same list modern build tools expect."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to install anything to use the output?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Unzip the folder into your site's public directory and paste the provided <link> tags into your HTML <head>."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is my source image uploaded to generate the icons?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — every resize happens on an HTML canvas in your browser. The Trust Meter will read 0 bytes uploaded throughout."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screenshot-beautifier",
+          "/image-upscaler",
+          "/remove-background",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/file-drop/",
+      "kind": "tool",
+      "slug": "file-drop",
+      "file": "dist/file-drop/index.html",
+      "page": {
+        "title": "File Drop — Free & Private | NABL Tools",
+        "description": "File Drop — P2P File Transfer — Free, No Cloud Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/file-drop/",
+        "h1s": [
+          "File Drop"
+        ],
+        "og": {
+          "type": "website",
+          "title": "File Drop — Free &#38; Private | NABL Tools",
+          "description": "File Drop — P2P File Transfer — Free, No Cloud Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/file-drop.png",
+          "url": "https://tools.nabl.in/file-drop/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "File Drop — Free &#38; Private | NABL Tools",
+          "description": "File Drop — P2P File Transfer — Free, No Cloud Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/file-drop.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Devices\",\"item\":\"https://tools.nabl.in/devices\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"File Drop\",\"item\":\"https://tools.nabl.in/file-drop\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Devices",
+                  "item": "https://tools.nabl.in/devices"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "File Drop",
+                  "item": "https://tools.nabl.in/file-drop"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"File Drop\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"File Drop — P2P File Transfer — Free, No Cloud Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/file-drop\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "File Drop",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "File Drop — P2P File Transfer — Free, No Cloud Upload | NABL Tools",
+              "url": "https://tools.nabl.in/file-drop"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Does the file pass through your servers?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. A small signaling server only helps two devices discover each other and negotiate a direct WebRTC connection; the actual file bytes travel peer-to-peer, never through our infrastructure.\"}},{\"@type\":\"Question\",\"name\":\"Do I need an account to use this?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — pairing is done per-session with a QR code or link; there's nothing to sign up for and nothing is stored afterward.\"}},{\"@type\":\"Question\",\"name\":\"Can I send to more than one device at once?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Each session pairs two devices. For multiple recipients, open a new session per pair.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Does the file pass through your servers?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. A small signaling server only helps two devices discover each other and negotiate a direct WebRTC connection; the actual file bytes travel peer-to-peer, never through our infrastructure."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need an account to use this?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — pairing is done per-session with a QR code or link; there's nothing to sign up for and nothing is stored afterward."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I send to more than one device at once?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each session pairs two devices. For multiple recipients, open a new session per pair."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/webcam-test",
+          "/screen-recorder",
+          "/screenshot-beautifier",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/image-upscaler/",
+      "kind": "tool",
+      "slug": "image-upscaler",
+      "file": "dist/image-upscaler/index.html",
+      "page": {
+        "title": "Image Upscaler — Free & Private | NABL Tools",
+        "description": "Image Upscaler Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/image-upscaler/",
+        "h1s": [
+          "Image Upscaler"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Image Upscaler — Free &#38; Private | NABL Tools",
+          "description": "Image Upscaler Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/image-upscaler.png",
+          "url": "https://tools.nabl.in/image-upscaler/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Image Upscaler — Free &#38; Private | NABL Tools",
+          "description": "Image Upscaler Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/image-upscaler.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Image Upscaler\",\"item\":\"https://tools.nabl.in/image-upscaler\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Image Upscaler",
+                  "item": "https://tools.nabl.in/image-upscaler"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Image Upscaler\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Image Upscaler Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/image-upscaler\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Image Upscaler",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Image Upscaler Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/image-upscaler"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my image uploaded to a server to upscale it?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — the upscaling model runs locally via onnxruntime-web. Nothing is sent over the network during processing.\"}},{\"@type\":\"Question\",\"name\":\"What's the difference between 2× and 4×?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"4× produces four times the linear resolution (16× the pixel count) of the source and takes proportionally longer to compute.\"}},{\"@type\":\"Question\",\"name\":\"Does upscaling work on illustrations and screenshots, not just photos?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It's tuned for photographic detail; flat illustrations and UI screenshots can look over-sharpened. For those, a simple resize may look cleaner.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my image uploaded to a server to upscale it?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — the upscaling model runs locally via onnxruntime-web. Nothing is sent over the network during processing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What's the difference between 2× and 4×?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "4× produces four times the linear resolution (16× the pixel count) of the source and takes proportionally longer to compute."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does upscaling work on illustrations and screenshots, not just photos?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It's tuned for photographic detail; flat illustrations and UI screenshots can look over-sharpened. For those, a simple resize may look cleaner."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/remove-background",
+          "/screenshot-beautifier",
+          "/favicon-generator",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/image/",
+      "kind": "hub",
+      "category": "image",
+      "file": "dist/image/index.html",
+      "page": {
+        "title": "Image Tools — Free & Private | NABL Tools",
+        "description": "Remove backgrounds, upscale, extract text, and frame images and icons — full resolution, processed in your browser.",
+        "canonical": "https://tools.nabl.in/image/",
+        "h1s": [
+          "Image"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Image Tools — Free &#38; Private | NABL Tools",
+          "description": "Remove backgrounds, upscale, extract text, and frame images and icons — full resolution, processed in your browser.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/image/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Image Tools — Free &#38; Private | NABL Tools",
+          "description": "Remove backgrounds, upscale, extract text, and frame images and icons — full resolution, processed in your browser.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/remove-background",
+          "/image-upscaler",
+          "/favicon-generator",
+          "/screenshot-beautifier",
+          "/ocr",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/",
+      "kind": "home",
+      "file": "dist/index.html",
+      "page": {
+        "title": "NABL Tools — Private, Instant Browser Tools | No Upload",
+        "description": "A catalogue of premium browser-native tools. Nothing leaves your device.",
+        "canonical": "https://tools.nabl.in/",
+        "h1s": [
+          "Nothing leaves your device."
+        ],
+        "og": {
+          "type": "website",
+          "title": "NABL Tools — Private, Instant Browser Tools | No Upload",
+          "description": "A catalogue of premium browser-native tools. Nothing leaves your device.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "NABL Tools — Private, Instant Browser Tools | No Upload",
+          "description": "A catalogue of premium browser-native tools. Nothing leaves your device.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"NABL Tools\",\"url\":\"https://tools.nabl.in\",\"description\":\"Private, instant browser-native tools. Nothing leaves your device.\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "NABL Tools",
+              "url": "https://tools.nabl.in",
+              "description": "Private, instant browser-native tools. Nothing leaves your device."
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"NABL Tools\",\"url\":\"https://tools.nabl.in\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://tools.nabl.in/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "NABL Tools",
+              "url": "https://tools.nabl.in",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://tools.nabl.in/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screen-recorder",
+          "/transcribe",
+          "/video-compressor",
+          "/pdf-compressor",
+          "/merge-pdf",
+          "/split-pdf",
+          "/redact",
+          "/sign-pdf",
+          "/remove-background",
+          "/image-upscaler",
+          "/favicon-generator",
+          "/screenshot-beautifier",
+          "/ocr",
+          "/webcam-test",
+          "/mic-test",
+          "/file-drop",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/merge-pdf/",
+      "kind": "tool",
+      "slug": "merge-pdf",
+      "file": "dist/merge-pdf/index.html",
+      "page": {
+        "title": "Merge PDF — Free & Private | NABL Tools",
+        "description": "Merge PDF Files Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/merge-pdf/",
+        "h1s": [
+          "Merge PDF"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Merge PDF — Free &#38; Private | NABL Tools",
+          "description": "Merge PDF Files Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/merge-pdf.png",
+          "url": "https://tools.nabl.in/merge-pdf/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Merge PDF — Free &#38; Private | NABL Tools",
+          "description": "Merge PDF Files Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/merge-pdf.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Merge PDF\",\"item\":\"https://tools.nabl.in/merge-pdf\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Merge PDF",
+                  "item": "https://tools.nabl.in/merge-pdf"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Merge PDF\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Merge PDF Files Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/merge-pdf\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Merge PDF",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Merge PDF Files Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/merge-pdf"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is there a limit on how many files I can merge?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No fixed limit — it's constrained by your browser's memory, not a server quota.\"}},{\"@type\":\"Question\",\"name\":\"Does merging change the quality of the pages?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Pages are copied as-is; nothing is re-rendered or recompressed during a merge.\"}},{\"@type\":\"Question\",\"name\":\"Can I reorder individual pages, not just whole files?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Not yet — this tool reorders whole source files. To drop or reorder individual pages, split the file first, or merge and then use the split tool to trim the result.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is there a limit on how many files I can merge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No fixed limit — it's constrained by your browser's memory, not a server quota."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does merging change the quality of the pages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Pages are copied as-is; nothing is re-rendered or recompressed during a merge."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I reorder individual pages, not just whole files?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not yet — this tool reorders whole source files. To drop or reorder individual pages, split the file first, or merge and then use the split tool to trim the result."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/split-pdf",
+          "/pdf-compressor",
+          "/sign-pdf",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/mic-test/",
+      "kind": "tool",
+      "slug": "mic-test",
+      "file": "dist/mic-test/index.html",
+      "page": {
+        "title": "Mic Test — Free & Private | NABL Tools",
+        "description": "Test Your Microphone Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/mic-test/",
+        "h1s": [
+          "Mic Test"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Mic Test — Free &#38; Private | NABL Tools",
+          "description": "Test Your Microphone Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/mic-test.png",
+          "url": "https://tools.nabl.in/mic-test/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Mic Test — Free &#38; Private | NABL Tools",
+          "description": "Test Your Microphone Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/mic-test.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Devices\",\"item\":\"https://tools.nabl.in/devices\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Mic Test\",\"item\":\"https://tools.nabl.in/mic-test\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Devices",
+                  "item": "https://tools.nabl.in/devices"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Mic Test",
+                  "item": "https://tools.nabl.in/mic-test"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Mic Test\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Test Your Microphone Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/mic-test\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Mic Test",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Test Your Microphone Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/mic-test"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my voice recorded or uploaded?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No audio leaves your device. Levels are read directly from the Web Audio API in your browser, and the optional playback clip stays in local memory until you close the tab.\"}},{\"@type\":\"Question\",\"name\":\"Why does the meter jump even when I'm not talking?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Fans, keyboard clicks, and room echo all register. If the noise floor is high, try a wired headset or move away from fans and vents.\"}},{\"@type\":\"Question\",\"name\":\"Can I test two microphones at once?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Switch the source dropdown to compare devices one at a time — browsers only expose one active input stream per test.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my voice recorded or uploaded?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No audio leaves your device. Levels are read directly from the Web Audio API in your browser, and the optional playback clip stays in local memory until you close the tab."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does the meter jump even when I'm not talking?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fans, keyboard clicks, and room echo all register. If the noise floor is high, try a wired headset or move away from fans and vents."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I test two microphones at once?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Switch the source dropdown to compare devices one at a time — browsers only expose one active input stream per test."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/webcam-test",
+          "/screen-recorder",
+          "/transcribe",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/ocr/",
+      "kind": "tool",
+      "slug": "ocr",
+      "file": "dist/ocr/index.html",
+      "page": {
+        "title": "OCR — Image & PDF to Text — Free & Private | NABL Tools",
+        "description": "OCR — Extract Text from Image — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/ocr/",
+        "h1s": [
+          "OCR — Image & PDF to Text"
+        ],
+        "og": {
+          "type": "website",
+          "title": "OCR — Image &#38; PDF to Text — Free &#38; Private | NABL Tools",
+          "description": "OCR — Extract Text from Image — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/ocr.png",
+          "url": "https://tools.nabl.in/ocr/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "OCR — Image &#38; PDF to Text — Free &#38; Private | NABL Tools",
+          "description": "OCR — Extract Text from Image — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/ocr.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"OCR — Image & PDF to Text\",\"item\":\"https://tools.nabl.in/ocr\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "OCR — Image & PDF to Text",
+                  "item": "https://tools.nabl.in/ocr"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"OCR — Image & PDF to Text\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"OCR — Extract Text from Image — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/ocr\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "OCR — Image & PDF to Text",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "OCR — Extract Text from Image — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/ocr"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my document uploaded to extract the text?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — recognition runs locally using Tesseract compiled to WebAssembly. Nothing is sent to a server.\"}},{\"@type\":\"Question\",\"name\":\"Which languages are supported?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"English plus Malayalam, Hindi, Tamil, and other Tesseract-supported languages, each loaded as a separate model on demand.\"}},{\"@type\":\"Question\",\"name\":\"Can it read handwriting?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Tesseract is built for printed and typed text; handwriting recognition is unreliable and not the intended use case.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my document uploaded to extract the text?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — recognition runs locally using Tesseract compiled to WebAssembly. Nothing is sent to a server."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which languages are supported?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "English plus Malayalam, Hindi, Tamil, and other Tesseract-supported languages, each loaded as a separate model on demand."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can it read handwriting?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tesseract is built for printed and typed text; handwriting recognition is unreliable and not the intended use case."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/redact",
+          "/split-pdf",
+          "/transcribe",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/pdf-compressor/",
+      "kind": "tool",
+      "slug": "pdf-compressor",
+      "file": "dist/pdf-compressor/index.html",
+      "page": {
+        "title": "PDF Compressor — Free & Private | NABL Tools",
+        "description": "Compress PDF Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/pdf-compressor/",
+        "h1s": [
+          "PDF Compressor"
+        ],
+        "og": {
+          "type": "website",
+          "title": "PDF Compressor — Free &#38; Private | NABL Tools",
+          "description": "Compress PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/pdf-compressor.png",
+          "url": "https://tools.nabl.in/pdf-compressor/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "PDF Compressor — Free &#38; Private | NABL Tools",
+          "description": "Compress PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/pdf-compressor.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"PDF Compressor\",\"item\":\"https://tools.nabl.in/pdf-compressor\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "PDF Compressor",
+                  "item": "https://tools.nabl.in/pdf-compressor"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"PDF Compressor\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Compress PDF Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/pdf-compressor\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "PDF Compressor",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Compress PDF Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/pdf-compressor"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Will compressing make my text blurry or unselectable?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Compression re-renders each page as an image at your chosen quality, so text stays sharp at Light and Balanced but is no longer selectable or searchable afterward — the same trade-off as scanning a printed page. Keep an uncompressed copy if you need selectable text.\"}},{\"@type\":\"Question\",\"name\":\"How much smaller will my file get?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less.\"}},{\"@type\":\"Question\",\"name\":\"Is there a page limit?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No fixed limit — it's set by your browser's available memory, not a server-side cap.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Will compressing make my text blurry or unselectable?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compression re-renders each page as an image at your chosen quality, so text stays sharp at Light and Balanced but is no longer selectable or searchable afterward — the same trade-off as scanning a printed page. Keep an uncompressed copy if you need selectable text."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much smaller will my file get?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on content and the level you pick. Image-heavy and scanned PDFs often shrink 50–80% at Balanced or Aggressive; already-compact text PDFs shrink less."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a page limit?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No fixed limit — it's set by your browser's available memory, not a server-side cap."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/merge-pdf",
+          "/split-pdf",
+          "/sign-pdf",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/pdf/",
+      "kind": "hub",
+      "category": "pdf",
+      "file": "dist/pdf/index.html",
+      "page": {
+        "title": "PDF Tools — Free & Private | NABL Tools",
+        "description": "Compress, merge, split, sign, and redact PDFs locally. Nothing you drop here is sent to a server to be read.",
+        "canonical": "https://tools.nabl.in/pdf/",
+        "h1s": [
+          "PDF"
+        ],
+        "og": {
+          "type": "website",
+          "title": "PDF Tools — Free &#38; Private | NABL Tools",
+          "description": "Compress, merge, split, sign, and redact PDFs locally. Nothing you drop here is sent to a server to be read.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/pdf/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "PDF Tools — Free &#38; Private | NABL Tools",
+          "description": "Compress, merge, split, sign, and redact PDFs locally. Nothing you drop here is sent to a server to be read.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/pdf-compressor",
+          "/merge-pdf",
+          "/split-pdf",
+          "/redact",
+          "/sign-pdf",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/privacy/",
+      "kind": "other",
+      "file": "dist/privacy/index.html",
+      "page": {
+        "title": "Privacy | NABL Tools",
+        "description": "What runs locally, what a cookieless analytics ping contains, and what File Drop signaling sees. No accounts, no tracking cookies.",
+        "canonical": "https://tools.nabl.in/privacy/",
+        "h1s": [
+          "Privacy"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Privacy | NABL Tools",
+          "description": "What runs locally, what a cookieless analytics ping contains, and what File Drop signaling sees. No accounts, no tracking cookies.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/privacy/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Privacy | NABL Tools",
+          "description": "What runs locally, what a cookieless analytics ping contains, and what File Drop signaling sees. No accounts, no tracking cookies.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Privacy\",\"item\":\"https://tools.nabl.in/privacy\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Privacy",
+                  "item": "https://tools.nabl.in/privacy"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/redact/",
+      "kind": "tool",
+      "slug": "redact",
+      "file": "dist/redact/index.html",
+      "page": {
+        "title": "Redact — Free & Private | NABL Tools",
+        "description": "Redact PDF Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/redact/",
+        "h1s": [
+          "Redact"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Redact — Free &#38; Private | NABL Tools",
+          "description": "Redact PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/redact.png",
+          "url": "https://tools.nabl.in/redact/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Redact — Free &#38; Private | NABL Tools",
+          "description": "Redact PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/redact.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Redact\",\"item\":\"https://tools.nabl.in/redact\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Redact",
+                  "item": "https://tools.nabl.in/redact"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Redact\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Redact PDF Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/redact\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Redact",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Redact PDF Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/redact"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is this 'true' redaction, or just a black box on top?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"True redaction. Export rasterizes each redacted page into a flat image, so there's no hidden text layer left to copy or search out.\"}},{\"@type\":\"Question\",\"name\":\"Will the rest of the PDF's pages be affected?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — only pages you draw a redaction on are flattened; untouched pages keep their original text and quality.\"}},{\"@type\":\"Question\",\"name\":\"Can I undo a redaction before exporting?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, redactions are editable up until you click Flatten & Export; after export, the change is permanent by design.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is this 'true' redaction, or just a black box on top?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "True redaction. Export rasterizes each redacted page into a flat image, so there's no hidden text layer left to copy or search out."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Will the rest of the PDF's pages be affected?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — only pages you draw a redaction on are flattened; untouched pages keep their original text and quality."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I undo a redaction before exporting?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, redactions are editable up until you click Flatten & Export; after export, the change is permanent by design."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/sign-pdf",
+          "/split-pdf",
+          "/pdf-compressor",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/remove-background/",
+      "kind": "tool",
+      "slug": "remove-background",
+      "file": "dist/remove-background/index.html",
+      "page": {
+        "title": "Background Remover — Free & Private | NABL Tools",
+        "description": "Remove Background from Image — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/remove-background/",
+        "h1s": [
+          "Background Remover"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Background Remover — Free &#38; Private | NABL Tools",
+          "description": "Remove Background from Image — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/remove-background.png",
+          "url": "https://tools.nabl.in/remove-background/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Background Remover — Free &#38; Private | NABL Tools",
+          "description": "Remove Background from Image — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/remove-background.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Background Remover\",\"item\":\"https://tools.nabl.in/remove-background\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Background Remover",
+                  "item": "https://tools.nabl.in/remove-background"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Background Remover\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Remove Background from Image — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/remove-background\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Background Remover",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Remove Background from Image — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/remove-background"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my photo uploaded to remove the background?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — segmentation runs locally using an ONNX model executed in your browser. The image and the result both stay on your device.\"}},{\"@type\":\"Question\",\"name\":\"Can I use the output for commercial work?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The tool's own output has no usage restriction; check the specific base image's own rights separately, as that's unrelated to this tool.\"}},{\"@type\":\"Question\",\"name\":\"Why does the first image take longer than the rest?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The first run downloads and initializes the segmentation model; subsequent images in the same session, and future visits, reuse the cached model.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my photo uploaded to remove the background?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — segmentation runs locally using an ONNX model executed in your browser. The image and the result both stay on your device."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I use the output for commercial work?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool's own output has no usage restriction; check the specific base image's own rights separately, as that's unrelated to this tool."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does the first image take longer than the rest?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The first run downloads and initializes the segmentation model; subsequent images in the same session, and future visits, reuse the cached model."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/image-upscaler",
+          "/screenshot-beautifier",
+          "/favicon-generator",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/screen-recorder/",
+      "kind": "tool",
+      "slug": "screen-recorder",
+      "file": "dist/screen-recorder/index.html",
+      "page": {
+        "title": "Screen Recorder — Free & Private | NABL Tools",
+        "description": "Screen Recorder Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/screen-recorder/",
+        "h1s": [
+          "Screen Recorder"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Screen Recorder — Free &#38; Private | NABL Tools",
+          "description": "Screen Recorder Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/screen-recorder.png",
+          "url": "https://tools.nabl.in/screen-recorder/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Screen Recorder — Free &#38; Private | NABL Tools",
+          "description": "Screen Recorder Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/screen-recorder.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Video & Screen\",\"item\":\"https://tools.nabl.in/video\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Screen Recorder\",\"item\":\"https://tools.nabl.in/screen-recorder\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Video & Screen",
+                  "item": "https://tools.nabl.in/video"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Screen Recorder",
+                  "item": "https://tools.nabl.in/screen-recorder"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Screen Recorder\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Screen Recorder Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/screen-recorder\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Screen Recorder",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Screen Recorder Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/screen-recorder"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my recording uploaded anywhere while I record?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. MediaRecorder writes the video to memory in your browser, and the Trust Meter confirms zero bytes are sent over the network for the entire session.\"}},{\"@type\":\"Question\",\"name\":\"What format does the download come in?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"WebM by default, since that's what MediaRecorder produces natively in most browsers. Some browsers can export MP4 directly.\"}},{\"@type\":\"Question\",\"name\":\"Can I record just a browser tab and not my whole desktop?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes — when you click Start, the browser's own picker lets you choose a tab, a window, or the entire screen.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my recording uploaded anywhere while I record?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. MediaRecorder writes the video to memory in your browser, and the Trust Meter confirms zero bytes are sent over the network for the entire session."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What format does the download come in?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "WebM by default, since that's what MediaRecorder produces natively in most browsers. Some browsers can export MP4 directly."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I record just a browser tab and not my whole desktop?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — when you click Start, the browser's own picker lets you choose a tab, a window, or the entire screen."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/video-compressor",
+          "/webcam-test",
+          "/mic-test",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/screenshot-beautifier/",
+      "kind": "tool",
+      "slug": "screenshot-beautifier",
+      "file": "dist/screenshot-beautifier/index.html",
+      "page": {
+        "title": "Screenshot Beautifier — Free & Private | NABL Tools",
+        "description": "Screenshot Beautifier — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/screenshot-beautifier/",
+        "h1s": [
+          "Screenshot Beautifier"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Screenshot Beautifier — Free &#38; Private | NABL Tools",
+          "description": "Screenshot Beautifier — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/screenshot-beautifier.png",
+          "url": "https://tools.nabl.in/screenshot-beautifier/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Screenshot Beautifier — Free &#38; Private | NABL Tools",
+          "description": "Screenshot Beautifier — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/screenshot-beautifier.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Image\",\"item\":\"https://tools.nabl.in/image\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Screenshot Beautifier\",\"item\":\"https://tools.nabl.in/screenshot-beautifier\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Image",
+                  "item": "https://tools.nabl.in/image"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Screenshot Beautifier",
+                  "item": "https://tools.nabl.in/screenshot-beautifier"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Screenshot Beautifier\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Screenshot Beautifier — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/screenshot-beautifier\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Screenshot Beautifier",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Screenshot Beautifier — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/screenshot-beautifier"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Can I paste directly from clipboard?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, on desktop browsers that support the Clipboard API — press Ctrl/Cmd+V anywhere on the page after copying a screenshot.\"}},{\"@type\":\"Question\",\"name\":\"Does this compress my image?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Only on export, and only if you choose JPG or WebP. PNG export is lossless.\"}},{\"@type\":\"Question\",\"name\":\"Is the image uploaded to render the backgrounds?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Everything is drawn on an HTML canvas locally; nothing is sent to a server at any point.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can I paste directly from clipboard?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, on desktop browsers that support the Clipboard API — press Ctrl/Cmd+V anywhere on the page after copying a screenshot."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does this compress my image?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Only on export, and only if you choose JPG or WebP. PNG export is lossless."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is the image uploaded to render the backgrounds?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Everything is drawn on an HTML canvas locally; nothing is sent to a server at any point."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/favicon-generator",
+          "/image-upscaler",
+          "/remove-background",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/sign-pdf/",
+      "kind": "tool",
+      "slug": "sign-pdf",
+      "file": "dist/sign-pdf/index.html",
+      "page": {
+        "title": "Sign & Fill PDF — Free & Private | NABL Tools",
+        "description": "Sign & Fill PDF Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/sign-pdf/",
+        "h1s": [
+          "Sign & Fill PDF"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Sign &#38; Fill PDF — Free &#38; Private | NABL Tools",
+          "description": "Sign &#38; Fill PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/sign-pdf.png",
+          "url": "https://tools.nabl.in/sign-pdf/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Sign &#38; Fill PDF — Free &#38; Private | NABL Tools",
+          "description": "Sign &#38; Fill PDF Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/sign-pdf.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Sign & Fill PDF\",\"item\":\"https://tools.nabl.in/sign-pdf\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Sign & Fill PDF",
+                  "item": "https://tools.nabl.in/sign-pdf"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Sign & Fill PDF\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Sign & Fill PDF Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/sign-pdf\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Sign & Fill PDF",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Sign & Fill PDF Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/sign-pdf"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is this a legally binding e-signature?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It produces a visual signature on the document, similar to signing a printed page and scanning it. Whether that meets a legal requirement depends on your jurisdiction and the document — this isn't a certified e-signature service with an audit trail.\"}},{\"@type\":\"Question\",\"name\":\"Does the PDF get uploaded to add my signature?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — the whole process, including rendering your signature onto the page, happens locally with pdf-lib.\"}},{\"@type\":\"Question\",\"name\":\"Can I sign a PDF that already has form fields?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, you can place a signature and text over existing form fields, though this tool doesn't yet fill native AcroForm fields directly.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is this a legally binding e-signature?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It produces a visual signature on the document, similar to signing a printed page and scanning it. Whether that meets a legal requirement depends on your jurisdiction and the document — this isn't a certified e-signature service with an audit trail."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does the PDF get uploaded to add my signature?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — the whole process, including rendering your signature onto the page, happens locally with pdf-lib."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I sign a PDF that already has form fields?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can place a signature and text over existing form fields, though this tool doesn't yet fill native AcroForm fields directly."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/redact",
+          "/pdf-compressor",
+          "/merge-pdf",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/split-pdf/",
+      "kind": "tool",
+      "slug": "split-pdf",
+      "file": "dist/split-pdf/index.html",
+      "page": {
+        "title": "Split PDF — Free & Private | NABL Tools",
+        "description": "Split PDF Pages Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/split-pdf/",
+        "h1s": [
+          "Split PDF"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Split PDF — Free &#38; Private | NABL Tools",
+          "description": "Split PDF Pages Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/split-pdf.png",
+          "url": "https://tools.nabl.in/split-pdf/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Split PDF — Free &#38; Private | NABL Tools",
+          "description": "Split PDF Pages Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/split-pdf.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"PDF\",\"item\":\"https://tools.nabl.in/pdf\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Split PDF\",\"item\":\"https://tools.nabl.in/split-pdf\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "PDF",
+                  "item": "https://tools.nabl.in/pdf"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Split PDF",
+                  "item": "https://tools.nabl.in/split-pdf"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Split PDF\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Split PDF Pages Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/split-pdf\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Split PDF",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Split PDF Pages Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/split-pdf"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Can I extract non-contiguous pages, like 1, 4, and 9?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes — select individual thumbnails or type a comma-separated list and range together, e.g. '1,4,9-12'.\"}},{\"@type\":\"Question\",\"name\":\"Does splitting affect page quality?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — pages are copied out as-is, with no re-rendering or recompression.\"}},{\"@type\":\"Question\",\"name\":\"Is my document uploaded to generate the thumbnails?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — pdf.js renders every thumbnail locally in the browser; the file is never sent anywhere.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can I extract non-contiguous pages, like 1, 4, and 9?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — select individual thumbnails or type a comma-separated list and range together, e.g. '1,4,9-12'."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does splitting affect page quality?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — pages are copied out as-is, with no re-rendering or recompression."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is my document uploaded to generate the thumbnails?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — pdf.js renders every thumbnail locally in the browser; the file is never sent anywhere."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/merge-pdf",
+          "/pdf-compressor",
+          "/redact",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/transcribe/",
+      "kind": "tool",
+      "slug": "transcribe",
+      "file": "dist/transcribe/index.html",
+      "page": {
+        "title": "Audio/Video Transcriber — Free & Private | NABL Tools",
+        "description": "Transcribe Audio to Text — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/transcribe/",
+        "h1s": [
+          "Audio/Video Transcriber"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Audio/Video Transcriber — Free &#38; Private | NABL Tools",
+          "description": "Transcribe Audio to Text — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/transcribe.png",
+          "url": "https://tools.nabl.in/transcribe/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Audio/Video Transcriber — Free &#38; Private | NABL Tools",
+          "description": "Transcribe Audio to Text — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/transcribe.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Video & Screen\",\"item\":\"https://tools.nabl.in/video\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Audio/Video Transcriber\",\"item\":\"https://tools.nabl.in/transcribe\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Video & Screen",
+                  "item": "https://tools.nabl.in/video"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Audio/Video Transcriber",
+                  "item": "https://tools.nabl.in/transcribe"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Audio/Video Transcriber\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Transcribe Audio to Text — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/transcribe\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Audio/Video Transcriber",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Transcribe Audio to Text — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/transcribe"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my audio or video uploaded to transcribe it?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Transcription runs Whisper entirely in your browser via transformers.js — WebGPU when available, WASM otherwise. Nothing is sent over the network during processing.\"}},{\"@type\":\"Question\",\"name\":\"Why does it need to download a model first?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The speech-recognition model itself is 100–300MB depending on the quality tier you pick. It's downloaded once and cached, so later visits and later files skip that step.\"}},{\"@type\":\"Question\",\"name\":\"Which languages are supported?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Whisper supports dozens of languages; recognition quality varies by language and is generally strongest for widely-spoken ones with more training data.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my audio or video uploaded to transcribe it?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Transcription runs Whisper entirely in your browser via transformers.js — WebGPU when available, WASM otherwise. Nothing is sent over the network during processing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does it need to download a model first?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The speech-recognition model itself is 100–300MB depending on the quality tier you pick. It's downloaded once and cached, so later visits and later files skip that step."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which languages are supported?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Whisper supports dozens of languages; recognition quality varies by language and is generally strongest for widely-spoken ones with more training data."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screen-recorder",
+          "/video-compressor",
+          "/ocr",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/video-compressor/",
+      "kind": "tool",
+      "slug": "video-compressor",
+      "file": "dist/video-compressor/index.html",
+      "page": {
+        "title": "Video Trimmer & Compressor — Free & Private | NABL Tools",
+        "description": "Compress Video Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/video-compressor/",
+        "h1s": [
+          "Video Trimmer & Compressor"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Video Trimmer &#38; Compressor — Free &#38; Private | NABL Tools",
+          "description": "Compress Video Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/video-compressor.png",
+          "url": "https://tools.nabl.in/video-compressor/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Video Trimmer &#38; Compressor — Free &#38; Private | NABL Tools",
+          "description": "Compress Video Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/video-compressor.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Video & Screen\",\"item\":\"https://tools.nabl.in/video\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Video Trimmer & Compressor\",\"item\":\"https://tools.nabl.in/video-compressor\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Video & Screen",
+                  "item": "https://tools.nabl.in/video"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Video Trimmer & Compressor",
+                  "item": "https://tools.nabl.in/video-compressor"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Video Trimmer & Compressor\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Compress Video Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/video-compressor\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Video Trimmer & Compressor",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Compress Video Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/video-compressor"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is my video uploaded to a server to compress it?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No — this runs ffmpeg compiled to WebAssembly, executing entirely inside your browser tab. The Trust Meter confirms nothing is sent over the network during processing.\"}},{\"@type\":\"Question\",\"name\":\"How long does compression take?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Roughly proportional to video length and your device's CPU — expect it to take a noticeable fraction of the video's own runtime, longer on older hardware.\"}},{\"@type\":\"Question\",\"name\":\"Why does the tool need to download something first?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The ffmpeg engine itself is a ~30MB WebAssembly module. It's fetched once and cached by your browser, so repeat visits skip the download.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is my video uploaded to a server to compress it?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — this runs ffmpeg compiled to WebAssembly, executing entirely inside your browser tab. The Trust Meter confirms nothing is sent over the network during processing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does compression take?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Roughly proportional to video length and your device's CPU — expect it to take a noticeable fraction of the video's own runtime, longer on older hardware."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does the tool need to download something first?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ffmpeg engine itself is a ~30MB WebAssembly module. It's fetched once and cached by your browser, so repeat visits skip the download."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screen-recorder",
+          "/webcam-test",
+          "/pdf-compressor",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/video/",
+      "kind": "hub",
+      "category": "video",
+      "file": "dist/video/index.html",
+      "page": {
+        "title": "Video & Screen Tools — Free & Private | NABL Tools",
+        "description": "Record, trim, compress, and transcribe video and audio — all processed on your own device, never uploaded to render or encode.",
+        "canonical": "https://tools.nabl.in/video/",
+        "h1s": [
+          "Video & Screen"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Video &#38; Screen Tools — Free &#38; Private | NABL Tools",
+          "description": "Record, trim, compress, and transcribe video and audio — all processed on your own device, never uploaded to render or encode.",
+          "image": "https://tools.nabl.in/og/default.png",
+          "url": "https://tools.nabl.in/video/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Video &#38; Screen Tools — Free &#38; Private | NABL Tools",
+          "description": "Record, trim, compress, and transcribe video and audio — all processed on your own device, never uploaded to render or encode.",
+          "image": "https://tools.nabl.in/og/default.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Video & Screen\",\"item\":\"https://tools.nabl.in/video\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Video & Screen",
+                  "item": "https://tools.nabl.in/video"
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/screen-recorder",
+          "/transcribe",
+          "/video-compressor",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    },
+    {
+      "urlPath": "/webcam-test/",
+      "kind": "tool",
+      "slug": "webcam-test",
+      "file": "dist/webcam-test/index.html",
+      "page": {
+        "title": "Webcam Test — Free & Private | NABL Tools",
+        "description": "Test Your Webcam Online — Free, Private, No Upload | NABL Tools",
+        "canonical": "https://tools.nabl.in/webcam-test/",
+        "h1s": [
+          "Webcam Test"
+        ],
+        "og": {
+          "type": "website",
+          "title": "Webcam Test — Free &#38; Private | NABL Tools",
+          "description": "Test Your Webcam Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/webcam-test.png",
+          "url": "https://tools.nabl.in/webcam-test/"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Webcam Test — Free &#38; Private | NABL Tools",
+          "description": "Test Your Webcam Online — Free, Private, No Upload | NABL Tools",
+          "image": "https://tools.nabl.in/og/webcam-test.png"
+        },
+        "ldjson": [
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tools.nabl.in/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Devices\",\"item\":\"https://tools.nabl.in/devices\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Webcam Test\",\"item\":\"https://tools.nabl.in/webcam-test\"}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://tools.nabl.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Devices",
+                  "item": "https://tools.nabl.in/devices"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Webcam Test",
+                  "item": "https://tools.nabl.in/webcam-test"
+                }
+              ]
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Webcam Test\",\"applicationCategory\":\"UtilitiesApplication\",\"operatingSystem\":\"Any (browser)\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"Test Your Webcam Online — Free, Private, No Upload | NABL Tools\",\"url\":\"https://tools.nabl.in/webcam-test\"}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Webcam Test",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Any (browser)",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Test Your Webcam Online — Free, Private, No Upload | NABL Tools",
+              "url": "https://tools.nabl.in/webcam-test"
+            },
+            "error": null
+          },
+          {
+            "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Does this upload my video anywhere?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. The video stream stays inside this browser tab; it's rendered to a local <video> element and never leaves your device. The Trust Meter above confirms zero bytes uploaded.\"}},{\"@type\":\"Question\",\"name\":\"Why does my resolution look lower than my camera's spec?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Browsers request the closest supported mode to what a page asks for. Some cameras only expose their full resolution over specific USB modes or drivers outside the browser.\"}},{\"@type\":\"Question\",\"name\":\"Can I record a test clip?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Not on this page — for that, use the Screen Recorder, which can also capture a webcam bubble.\"}}]}",
+            "parsed": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Does this upload my video anywhere?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The video stream stays inside this browser tab; it's rendered to a local <video> element and never leaves your device. The Trust Meter above confirms zero bytes uploaded."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does my resolution look lower than my camera's spec?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Browsers request the closest supported mode to what a page asks for. Some cameras only expose their full resolution over specific USB modes or drivers outside the browser."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I record a test clip?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not on this page — for that, use the Screen Recorder, which can also capture a webcam bubble."
+                  }
+                }
+              ]
+            },
+            "error": null
+          }
+        ],
+        "links": [
+          "/",
+          "/video",
+          "/pdf",
+          "/image",
+          "/devices",
+          "/mic-test",
+          "/screen-recorder",
+          "/screenshot-beautifier",
+          "/about",
+          "/privacy",
+          "/changelog"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "category": "title",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "Title OK (27 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "Description OK (87 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "Exactly one H1: \"That instrument isn't on the bench.\""
+    },
+    {
+      "category": "canonical",
+      "page": "/404.html",
+      "status": "fail",
+      "message": "Canonical \"https://tools.nabl.in/404/\" does not match self URL \"https://tools.nabl.in/404.html\""
+    },
+    {
+      "category": "og-tags",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/404.html",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "title",
+      "page": "/about/",
+      "status": "pass",
+      "message": "Title OK (18 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/about/",
+      "status": "pass",
+      "message": "Description OK (145 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/about/",
+      "status": "pass",
+      "message": "Exactly one H1: \"About this catalogue\""
+    },
+    {
+      "category": "canonical",
+      "page": "/about/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/about/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/about/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/about/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/about/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/about/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/about/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "Title OK (22 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "Description OK (59 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Changelog\""
+    },
+    {
+      "category": "canonical",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/changelog/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/changelog/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "Title OK (43 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "Description OK (109 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Devices\""
+    },
+    {
+      "category": "canonical",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/devices/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/devices/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Title OK (54 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Description OK (68 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Favicon & Icon Generator\""
+    },
+    {
+      "category": "canonical",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/favicon-generator/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "og:image file exists (/og/favicon-generator.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/favicon-generator/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Title OK (39 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Description OK (66 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Exactly one H1: \"File Drop\""
+    },
+    {
+      "category": "canonical",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/file-drop/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "og:image file exists (/og/file-drop.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/file-drop/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Title OK (44 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Description OK (61 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Image Upscaler\""
+    },
+    {
+      "category": "canonical",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/image-upscaler/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "og:image file exists (/og/image-upscaler.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/image-upscaler/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/image/",
+      "status": "pass",
+      "message": "Title OK (41 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/image/",
+      "status": "pass",
+      "message": "Description OK (115 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/image/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Image\""
+    },
+    {
+      "category": "canonical",
+      "page": "/image/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/image/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/image/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/image/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/image/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/image/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/image/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/image/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/",
+      "status": "pass",
+      "message": "Title OK (55 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/",
+      "status": "pass",
+      "message": "Description OK (72 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Nothing leaves your device.\""
+    },
+    {
+      "category": "canonical",
+      "page": "/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/",
+      "status": "pass",
+      "message": "All 2 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/",
+      "status": "pass",
+      "message": "Has required @type Organization"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/",
+      "status": "pass",
+      "message": "Has required @type WebSite"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/",
+      "status": "pass",
+      "message": "Organization has all required fields (name, url)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/",
+      "status": "pass",
+      "message": "WebSite has all required fields (name, url)"
+    },
+    {
+      "category": "title",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Title OK (39 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Description OK (62 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Merge PDF\""
+    },
+    {
+      "category": "canonical",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/merge-pdf/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "og:image file exists (/og/merge-pdf.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/merge-pdf/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Title OK (38 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Description OK (67 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Mic Test\""
+    },
+    {
+      "category": "canonical",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/mic-test/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "og:image file exists (/og/mic-test.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/mic-test/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Title OK (55 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Description OK (69 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Exactly one H1: \"OCR — Image & PDF to Text\""
+    },
+    {
+      "category": "canonical",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/ocr/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "og:image file exists (/og/ocr.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/ocr/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Title OK (44 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Description OK (59 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Exactly one H1: \"PDF Compressor\""
+    },
+    {
+      "category": "canonical",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/pdf-compressor/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "og:image file exists (/og/pdf-compressor.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/pdf-compressor/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "Title OK (39 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "Description OK (108 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "Exactly one H1: \"PDF\""
+    },
+    {
+      "category": "canonical",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/pdf/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/pdf/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "Title OK (20 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "Description OK (130 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Privacy\""
+    },
+    {
+      "category": "canonical",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/privacy/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/privacy/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Title OK (36 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Description OK (57 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Redact\""
+    },
+    {
+      "category": "canonical",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/redact/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "og:image file exists (/og/redact.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/redact/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Title OK (48 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Description OK (68 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Background Remover\""
+    },
+    {
+      "category": "canonical",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/remove-background/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "og:image file exists (/og/remove-background.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/remove-background/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Title OK (45 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Description OK (62 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Screen Recorder\""
+    },
+    {
+      "category": "canonical",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/screen-recorder/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "og:image file exists (/og/screen-recorder.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screen-recorder/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Title OK (51 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Description OK (61 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Screenshot Beautifier\""
+    },
+    {
+      "category": "canonical",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/screenshot-beautifier/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "og:image file exists (/og/screenshot-beautifier.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/screenshot-beautifier/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Title OK (45 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Description OK (62 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Sign & Fill PDF\""
+    },
+    {
+      "category": "canonical",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/sign-pdf/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "og:image file exists (/og/sign-pdf.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/sign-pdf/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Title OK (39 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Description OK (62 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Split PDF\""
+    },
+    {
+      "category": "canonical",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/split-pdf/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "og:image file exists (/og/split-pdf.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/split-pdf/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Title OK (53 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Description OK (64 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Audio/Video Transcriber\""
+    },
+    {
+      "category": "canonical",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/transcribe/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "og:image file exists (/og/transcribe.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/transcribe/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Title OK (56 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Description OK (61 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Video Trimmer & Compressor\""
+    },
+    {
+      "category": "canonical",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/video-compressor/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "og:image file exists (/og/video-compressor.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/video-compressor/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title",
+      "page": "/video/",
+      "status": "pass",
+      "message": "Title OK (50 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/video/",
+      "status": "pass",
+      "message": "Description OK (126 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/video/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Video & Screen\""
+    },
+    {
+      "category": "canonical",
+      "page": "/video/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/video/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/video/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/video/",
+      "status": "pass",
+      "message": "og:image file exists (/og/default.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/video/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/video/",
+      "status": "pass",
+      "message": "All 1 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/video/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/video/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "title",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Title OK (41 chars)"
+    },
+    {
+      "category": "description",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Description OK (63 chars)"
+    },
+    {
+      "category": "h1",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Exactly one H1: \"Webcam Test\""
+    },
+    {
+      "category": "canonical",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Canonical self-references correctly (https://tools.nabl.in/webcam-test/)"
+    },
+    {
+      "category": "og-tags",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "All required og: tags present"
+    },
+    {
+      "category": "og-image-exists",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "og:image file exists (/og/webcam-test.png)"
+    },
+    {
+      "category": "twitter-tags",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "All required twitter: tags present"
+    },
+    {
+      "category": "jsonld-parse",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "All 3 ld+json block(s) parse as valid JSON"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Has required @type WebApplication"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Has required @type BreadcrumbList"
+    },
+    {
+      "category": "jsonld-type",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "Has required @type FAQPage"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "BreadcrumbList has all required fields (itemListElement)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "WebApplication has all required fields (name, applicationCategory, operatingSystem, offers)"
+    },
+    {
+      "category": "jsonld-fields",
+      "page": "/webcam-test/",
+      "status": "pass",
+      "message": "FAQPage has all required fields (mainEntity)"
+    },
+    {
+      "category": "title-unique",
+      "page": null,
+      "status": "pass",
+      "message": "All 25 titles are unique"
+    },
+    {
+      "category": "description-unique",
+      "page": null,
+      "status": "pass",
+      "message": "All 25 descriptions are unique"
+    },
+    {
+      "category": "sitemap",
+      "page": null,
+      "status": "pass",
+      "message": "dist/sitemap-index.xml exists"
+    },
+    {
+      "category": "sitemap",
+      "page": null,
+      "status": "pass",
+      "message": "Referenced sitemap file exists: /sitemap-0.xml"
+    },
+    {
+      "category": "sitemap-coverage",
+      "page": null,
+      "status": "pass",
+      "message": "All 21 expected core page URLs are present in the sitemap"
+    },
+    {
+      "category": "sitemap-no-404s",
+      "page": null,
+      "status": "pass",
+      "message": "All 24 sitemap URLs resolve to a real built page"
+    },
+    {
+      "category": "robots",
+      "page": null,
+      "status": "pass",
+      "message": "dist/robots.txt exists"
+    },
+    {
+      "category": "robots",
+      "page": null,
+      "status": "pass",
+      "message": "robots.txt does not blanket-disallow crawling"
+    },
+    {
+      "category": "robots",
+      "page": null,
+      "status": "pass",
+      "message": "robots.txt has \"User-agent: *\" with \"Allow: /\""
+    },
+    {
+      "category": "robots",
+      "page": null,
+      "status": "pass",
+      "message": "robots.txt Sitemap directive correctly points to https://tools.nabl.in/sitemap-index.xml"
+    },
+    {
+      "category": "broken-link",
+      "page": null,
+      "status": "pass",
+      "message": "All 286 internal links across 25 pages resolve to real files"
+    },
+    {
+      "category": "homepage-links-hubs",
+      "page": "/",
+      "status": "pass",
+      "message": "Homepage links to all 4 category hubs"
+    },
+    {
+      "category": "homepage-links-tools",
+      "page": "/",
+      "status": "pass",
+      "message": "Homepage links to all 16 live tools"
+    },
+    {
+      "category": "hub-links-tools",
+      "page": "/video",
+      "status": "pass",
+      "message": "Hub links to all 3 of its category's tools"
+    },
+    {
+      "category": "hub-links-tools",
+      "page": "/pdf",
+      "status": "pass",
+      "message": "Hub links to all 5 of its category's tools"
+    },
+    {
+      "category": "hub-links-tools",
+      "page": "/image",
+      "status": "pass",
+      "message": "Hub links to all 5 of its category's tools"
+    },
+    {
+      "category": "hub-links-tools",
+      "page": "/devices",
+      "status": "pass",
+      "message": "Hub links to all 3 of its category's tools"
+    },
+    {
+      "category": "related-links",
+      "page": "/favicon-generator",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/file-drop",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/image-upscaler",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/merge-pdf",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/mic-test",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/ocr",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/pdf-compressor",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/redact",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/remove-background",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/screen-recorder",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/screenshot-beautifier",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/sign-pdf",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/split-pdf",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/transcribe",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/video-compressor",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "related-links",
+      "page": "/webcam-test",
+      "status": "pass",
+      "message": "All 3 related tool(s) are correctly linked"
+    },
+    {
+      "category": "no-js-content",
+      "page": "homepage",
+      "status": "pass",
+      "message": "Raw HTML contains 2852 chars of visible text incl. all 1 expected content marker(s)"
+    },
+    {
+      "category": "no-js-content",
+      "page": "tool page (pdf-compressor)",
+      "status": "pass",
+      "message": "Raw HTML contains 3047 chars of visible text incl. all 4 expected content marker(s)"
+    },
+    {
+      "category": "no-js-content",
+      "page": "hub page (pdf)",
+      "status": "pass",
+      "message": "Raw HTML contains 1042 chars of visible text incl. all 2 expected content marker(s)"
+    }
+  ],
+  "summary": {
+    "title": {
+      "pass": 25,
+      "fail": 0
+    },
+    "description": {
+      "pass": 25,
+      "fail": 0
+    },
+    "h1": {
+      "pass": 25,
+      "fail": 0
+    },
+    "canonical": {
+      "pass": 24,
+      "fail": 1
+    },
+    "og-tags": {
+      "pass": 25,
+      "fail": 0
+    },
+    "og-image-exists": {
+      "pass": 25,
+      "fail": 0
+    },
+    "twitter-tags": {
+      "pass": 25,
+      "fail": 0
+    },
+    "jsonld-parse": {
+      "pass": 24,
+      "fail": 0
+    },
+    "jsonld-fields": {
+      "pass": 57,
+      "fail": 0
+    },
+    "jsonld-type": {
+      "pass": 54,
+      "fail": 0
+    },
+    "title-unique": {
+      "pass": 1,
+      "fail": 0
+    },
+    "description-unique": {
+      "pass": 1,
+      "fail": 0
+    },
+    "sitemap": {
+      "pass": 2,
+      "fail": 0
+    },
+    "sitemap-coverage": {
+      "pass": 1,
+      "fail": 0
+    },
+    "sitemap-no-404s": {
+      "pass": 1,
+      "fail": 0
+    },
+    "robots": {
+      "pass": 4,
+      "fail": 0
+    },
+    "broken-link": {
+      "pass": 1,
+      "fail": 0
+    },
+    "homepage-links-hubs": {
+      "pass": 1,
+      "fail": 0
+    },
+    "homepage-links-tools": {
+      "pass": 1,
+      "fail": 0
+    },
+    "hub-links-tools": {
+      "pass": 4,
+      "fail": 0
+    },
+    "related-links": {
+      "pass": 16,
+      "fail": 0
+    },
+    "no-js-content": {
+      "pass": 3,
+      "fail": 0
+    }
+  }
+}

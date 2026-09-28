@@ -11,7 +11,8 @@
     "astro": "astro",
     "check": "astro check",
     "fixtures": "node tests/fixtures/generate.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "indexnow": "node scripts/indexnow-ping.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
