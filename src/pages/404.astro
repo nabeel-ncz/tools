@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLiveTools, toolUrl } from '../lib/tools';
+
+const tools = await getLiveTools();
+const featured = tools.slice(0, 6);
+
+const title = 'Page Not Found | NABL Tools';
+const description = "That page doesn't exist. Find the instrument you're looking for in the catalogue below.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="wrap not-found">
+    <p class="serial readout">404</p>
+    <h1>That instrument isn't on the bench.</h1>
+    <p class="lead">The page you're looking for doesn't exist, or has moved. Try the command palette (press <kbd>/</kbd>), or jump to one of these:</p>
+
+    <ol class="catalogue-list">
+      {
+        featured.map((tool) => (
+          <li class="catalogue-row">
+            <a href={toolUrl(tool.slug)} class="catalogue-link">
+              <span class="cat-serial readout">No. {tool.data.serial}</span>
+              <span class="cat-title">{tool.data.title}</span>
+              <span class="cat-purpose">{tool.data.oneLine}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+
+    <a class="home-link" href="/">&larr; Back to the full catalogue</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    padding-block: var(--space-8) var(--space-9);
+  }
+
+  .serial {
+    color: var(--signal);
+    font-size: var(--text-sm);
+    margin: 0 0 var(--space-3);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    max-width: 16ch;
+  }
+
+  .lead {
+    max-width: 56ch;
+    font-size: var(--text-md);
+    margin-bottom: var(--space-7);
+  }
+
+  kbd {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 1px 6px;
+    background: var(--bg-raised);
+  }
+
+  .catalogue-list {
+    list-style: none;
+    margin: 0 0 var(--space-7);
+    padding: 0;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .catalogue-row {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .catalogue-link {
+    display: grid;
+    grid-template-columns: 4.5em 1fr 2fr;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-2);
+    text-decoration: none;
+    color: var(--fg);
+    transition: background var(--duration-tick) var(--ease-snap);
+  }
+
+  .catalogue-link:hover {
+    background: var(--bg-raised);
+  }
+
+  .cat-serial {
+    color: var(--fg-faint);
+    font-size: var(--text-xs);
+  }
+
+  .cat-title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+  }
+
+  .cat-purpose {
+    color: var(--fg-faint);
+    font-size: var(--text-sm);
+  }
+
+  .home-link {
+    color: var(--fg-soft);
+    text-decoration: none;
+    font-size: var(--text-sm);
+  }
+
+  .home-link:hover {
+    color: var(--signal);
+  }
+
+  @media (max-width: 700px) {
+    .catalogue-link {
+      grid-template-columns: 3.5em 1fr;
+      grid-template-areas: 'serial title' '. purpose';
+    }
+    .cat-serial {
+      grid-area: serial;
+    }
+    .cat-title {
+      grid-area: title;
+    }
+    .cat-purpose {
+      grid-area: purpose;
+    }
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About | NABL Tools';
+const description = 'How local-first processing actually works in the browser — Web APIs, WebAssembly, and on-device machine learning — and why this catalogue exists.';
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tools.nabl.in/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://tools.nabl.in/about' },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbJsonLd={breadcrumbJsonLd}>
+  <article class="wrap doc">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">About</li>
+      </ol>
+    </nav>
+
+    <h1>About this catalogue</h1>
+    <p class="lead">
+      Most online tools upload your file to a server, run it through a queue, and hand back a result. This
+      catalogue doesn't — every instrument here runs entirely inside your browser tab.
+    </p>
+
+    <h2>How that's actually possible</h2>
+    <p>
+      Modern browsers expose the same kind of low-level capability that used to require installed software:
+      cameras and microphones through <code>getUserMedia</code>, screen capture through
+      <code>getDisplayMedia</code>, and — most importantly — near-native-speed code execution through
+      <strong>WebAssembly</strong>. A video encoder, a PDF engine, an OCR model, even a speech-recognition model can
+      be compiled to WebAssembly and run directly in a browser tab, at speeds that were desktop-only a few years
+      ago.
+    </p>
+    <p>
+      A handful of tools go further and run real machine-learning models — background removal, image upscaling,
+      speech transcription — using <strong>ONNX Runtime Web</strong> or similar in-browser inference engines, with
+      GPU acceleration through WebGPU where the browser supports it, falling back to CPU-based WebAssembly
+      otherwise. The model weights are downloaded once (and cached), but the actual inference — the part that
+      touches your file — never leaves the tab.
+    </p>
+
+    <h2>What "instant" means here</h2>
+    <p>
+      Every tool page is usable the moment it loads — there's no heavyweight app shell to wait through. Anything
+      genuinely large (a video codec, a machine-learning model) loads lazily, only when you actually start using
+      that specific tool, with a visible size and progress readout rather than a silent spinner.
+    </p>
+
+    <h2>Why a catalogue, not an app</h2>
+    <p>
+      Each tool here is its own page, with its own URL, its own explanation, and its own interaction model — built
+      like a catalogue of individual instruments rather than one monolithic app with a sidebar of features. That's
+      partly practical (a tool is easiest to find by searching for exactly what it does) and partly a design choice:
+      each instrument earns its own "face," suited to what it actually does, rather than being squeezed into one
+      generic template.
+    </p>
+
+    <h2>Open source</h2>
+    <p>
+      The entire codebase — every tool's actual implementation, not just a description of it — is public at
+      <a href="https://github.com/nabeel-ncz/tools" rel="noopener">github.com/nabeel-ncz/tools</a>. That's
+      deliberate: a privacy claim is only worth as much as you can verify yourself. Read the source, run it
+      locally, or fork it.
+    </p>
+
+    <h2>Something missing?</h2>
+    <p>
+      If there's a tool you'd expect to find here, <a href="https://github.com/nabeel-ncz/tools/issues/new?template=tool-request.md">request it on GitHub</a> —
+      new instruments get added based on what people actually ask for.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .doc {
+    padding-block: var(--space-6) var(--space-9);
+    max-width: 68ch;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-5);
+    font-size: var(--text-xs);
+    color: var(--fg-faint);
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+  }
+
+  .breadcrumbs a {
+    color: var(--fg-faint);
+    text-decoration: none;
+  }
+
+  .lead {
+    font-size: var(--text-md);
+    color: var(--fg-soft);
+  }
+
+  h2 {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-5);
+    margin-top: var(--space-7);
+  }
+
+  h2:first-of-type {
+    margin-top: var(--space-6);
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--bg-raised);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+  }
+</style>

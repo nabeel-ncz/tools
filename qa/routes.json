@@ -1,0 +1,23 @@
+[
+  {"slug": "home", "path": "/"},
+  {"slug": "video-hub", "path": "/video/"},
+  {"slug": "pdf-hub", "path": "/pdf/"},
+  {"slug": "image-hub", "path": "/image/"},
+  {"slug": "devices-hub", "path": "/devices/"},
+  {"slug": "favicon-generator", "path": "/favicon-generator/"},
+  {"slug": "file-drop", "path": "/file-drop/"},
+  {"slug": "image-upscaler", "path": "/image-upscaler/"},
+  {"slug": "merge-pdf", "path": "/merge-pdf/"},
+  {"slug": "mic-test", "path": "/mic-test/"},
+  {"slug": "ocr", "path": "/ocr/"},
+  {"slug": "pdf-compressor", "path": "/pdf-compressor/"},
+  {"slug": "redact", "path": "/redact/"},
+  {"slug": "remove-background", "path": "/remove-background/"},
+  {"slug": "screen-recorder", "path": "/screen-recorder/"},
+  {"slug": "screenshot-beautifier", "path": "/screenshot-beautifier/"},
+  {"slug": "sign-pdf", "path": "/sign-pdf/"},
+  {"slug": "split-pdf", "path": "/split-pdf/"},
+  {"slug": "transcribe", "path": "/transcribe/"},
+  {"slug": "video-compressor", "path": "/video-compressor/"},
+  {"slug": "webcam-test", "path": "/webcam-test/"}
+]

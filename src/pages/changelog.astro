@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Changelog | NABL Tools';
+const description = 'What shipped, and when — every tool added to the catalogue.';
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tools.nabl.in/' },
+    { '@type': 'ListItem', position: 2, name: 'Changelog', item: 'https://tools.nabl.in/changelog' },
+  ],
+};
+
+const entries = [
+  {
+    date: '2026-09-28',
+    title: 'Launch: all 13 instruments',
+    items: [
+      'Screen Recorder, Video Trimmer & Compressor, Audio/Video Transcriber',
+      'PDF Compressor, Merge PDF, Split PDF, Redact, Sign & Fill PDF',
+      'Background Remover, Image Upscaler, OCR',
+      'File Drop (peer-to-peer transfer), Webcam Test, Mic Test',
+      'Screenshot Beautifier, Favicon & Icon Generator',
+      'The Instrument Bench design system, the Trust Meter, and the catalogue homepage',
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbJsonLd={breadcrumbJsonLd}>
+  <article class="wrap doc">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Changelog</li>
+      </ol>
+    </nav>
+
+    <h1>Changelog</h1>
+    <p class="lead">
+      New instruments get added based on what people ask for —
+      <a href="https://github.com/nabeel-ncz/tools/issues/new?template=tool-request.md">request one on GitHub</a>.
+      This page tracks what shipped, and when.
+    </p>
+
+    <ol class="entries">
+      {
+        entries.map((entry) => (
+          <li class="entry">
+            <time class="entry-date readout" datetime={entry.date}>
+              {entry.date}
+            </time>
+            <h2>{entry.title}</h2>
+            <ul>
+              {entry.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+  </article>
+</BaseLayout>
+
+<style>
+  .doc {
+    padding-block: var(--space-6) var(--space-9);
+    max-width: 68ch;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-5);
+    font-size: var(--text-xs);
+    color: var(--fg-faint);
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+  }
+
+  .breadcrumbs a {
+    color: var(--fg-faint);
+    text-decoration: none;
+  }
+
+  .lead {
+    font-size: var(--text-md);
+    color: var(--fg-soft);
+    margin-bottom: var(--space-7);
+  }
+
+  .entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .entry {
+    border-top: 1px solid var(--border-strong);
+    padding-top: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .entry-date {
+    color: var(--signal);
+    font-size: var(--text-sm);
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .entry h2 {
+    margin: 0 0 var(--space-3);
+  }
+
+  .entry ul {
+    color: var(--fg-soft);
+    padding-left: 1.25em;
+  }
+
+  .entry li {
+    margin-bottom: var(--space-2);
+  }
+</style>

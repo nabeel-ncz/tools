@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Privacy | NABL Tools';
+const description = 'What runs locally, what a cookieless analytics ping contains, and what File Drop signaling sees. No accounts, no tracking cookies.';
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tools.nabl.in/' },
+    { '@type': 'ListItem', position: 2, name: 'Privacy', item: 'https://tools.nabl.in/privacy' },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbJsonLd={breadcrumbJsonLd}>
+  <article class="wrap doc">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Privacy</li>
+      </ol>
+    </nav>
+
+    <h1>Privacy</h1>
+    <p class="lead">The short version: your files never leave your device. Here's exactly what that means, tool by tool.</p>
+
+    <h2>What runs locally</h2>
+    <p>
+      Every tool in this catalogue processes your files inside your own browser tab — using Web APIs, WebAssembly,
+      and, for a few tools, machine-learning models that run on your device's CPU or GPU. Nothing you drop, record,
+      or type into a tool is sent to a server. Each tool page carries its own <strong>Trust Meter</strong>, which
+      watches real network activity while you use it and reports the number of bytes uploaded. It should read
+      <span class="readout">0 bytes</span> for the file itself on every tool, for the entire time you use it.
+    </p>
+    <p>
+      A few tools download a one-time "engine" — a WebAssembly module or a machine-learning model — the first time
+      you use them (for example, the video compressor's ffmpeg engine, or the transcriber's speech model). That
+      download is the tool's own code and model weights, not your data; it's cached by your browser so it only
+      happens once. The Trust Meter doesn't count it as an upload, because nothing of yours is being sent — only
+      something being received.
+    </p>
+
+    <h2>The one exception: File Drop signaling</h2>
+    <p>
+      File Drop sends files directly between two of your own devices using WebRTC, a peer-to-peer connection built
+      into every browser. To help two devices find each other, a small signaling server (a Cloudflare Worker) relays
+      short connection-setup messages — the technical equivalent of two phones exchanging a phone number before a
+      call. Specifically, it sees:
+    </p>
+    <ul>
+      <li>A short, randomly generated session code (not tied to any identity)</li>
+      <li>WebRTC connection-negotiation messages (SDP offers/answers and ICE candidates) — standard networking
+        metadata, not file content</li>
+    </ul>
+    <p>
+      It never sees the file itself. Each signaling message is capped at 16KB specifically so it's structurally
+      impossible for it to carry file data — the server rejects anything larger. Once the two devices are connected,
+      the file streams directly between them, and the signaling server is no longer involved at all. Nothing is
+      logged or stored after the session ends.
+    </p>
+
+    <h2>Cookieless analytics</h2>
+    <p>
+      This site uses privacy-focused, cookieless web analytics to understand which pages get visited — no personal
+      data, no cross-site tracking, no cookie banner, because there's no cookie. It reports aggregate counts (which
+      page, roughly when, what country) and cannot identify you individually or follow you across other sites.
+    </p>
+
+    <h2>No accounts, no uploads, no ads</h2>
+    <p>
+      There's no sign-up, no login, and nothing to lose access to. Nothing you produce with a tool is stored on a
+      server — when you close the tab, it's gone unless you downloaded it. There are no ads and no third-party
+      trackers embedded in any tool page.
+    </p>
+
+    <h2>Questions</h2>
+    <p>
+      This project is open source — you can read exactly how every tool works, line by line, in its
+      <a href="https://github.com/nabeel-ncz/tools" rel="noopener">public repository</a>. If something here is
+      unclear, open an issue there.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .doc {
+    padding-block: var(--space-6) var(--space-9);
+    max-width: 68ch;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-5);
+    font-size: var(--text-xs);
+    color: var(--fg-faint);
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+  }
+
+  .breadcrumbs a {
+    color: var(--fg-faint);
+    text-decoration: none;
+  }
+
+  .lead {
+    font-size: var(--text-md);
+    color: var(--fg-soft);
+  }
+
+  h2 {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-5);
+    margin-top: var(--space-7);
+  }
+
+  h2:first-of-type {
+    margin-top: var(--space-6);
+  }
+
+  ul {
+    color: var(--fg-soft);
+    padding-left: 1.25em;
+  }
+
+  li {
+    margin-bottom: var(--space-2);
+  }
+</style>

@@ -1,6 +1,7 @@
 # build
 dist/
 .astro/
+.wrangler/
 
 # deps
 node_modules/
@@ -8,6 +9,8 @@ node_modules/
 # env
 .env
 .env.production
+.env.local
+.env.*.local
 
 # editors
 .vscode/*

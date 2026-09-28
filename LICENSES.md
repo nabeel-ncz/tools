@@ -15,7 +15,7 @@ new library or model, add a row here first — per the PRD, license review happe
 | @astrojs/sitemap | MIT | Sitemap generation |
 | pdf-lib | MIT | PDF Compressor, Merge, Split, Sign & Fill, Redact |
 | pdfjs-dist | Apache-2.0 | PDF Workbench, Sign & Fill, Redact, OCR (PDF input) |
-| @ffmpeg/ffmpeg, @ffmpeg/util | MIT | Video Trimmer & Compressor |
+| @ffmpeg/ffmpeg, @ffmpeg/util, @ffmpeg/core | MIT | Video Trimmer & Compressor — `@ffmpeg/core`'s WASM binary is self-hosted (bundled at build time), not CDN-fetched |
 | onnxruntime-web | MIT | Background Remover, Image Upscaler |
 | @huggingface/transformers | Apache-2.0 | Audio/Video Transcriber (Whisper) |
 | tesseract.js | Apache-2.0 | OCR |
@@ -42,7 +42,11 @@ new library or model, add a row here first — per the PRD, license review happe
 
 **Flagged for human re-verification before launch:** the two ONNX model choices
 above (MODNet, Swin2SR) were selected and license-checked by an agent from each
-model's Hugging Face card, but **not exercised in a live browser** in this build
-session (no such environment was available). Confirm the license terms once
-more directly on the model cards, and do one real inference run of each, before
-relying on this table for a launch decision. See `HANDOFF.md`.
+model's Hugging Face card. A later QA pass confirmed the onnxruntime-web
+*runtime* now self-hosts correctly and loads with real Chromium in a sandboxed
+test environment, but the model *weights* themselves are fetched from
+huggingface.co, which that sandbox could not reach — so real inference with
+these exact models has still not been exercised end-to-end. Confirm the
+license terms once more directly on the model cards, and do one real
+inference run of each in an environment with internet access, before relying
+on this table for a launch decision. See `HANDOFF.md` and `QA-REPORT.md`.
