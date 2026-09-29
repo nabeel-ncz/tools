@@ -22,4 +22,9 @@ class_name = "FileDropSession"
 
 [[migrations]]
 tag = "v1"
-new_classes = ["FileDropSession"]
+# SQLite-backed storage is required for Durable Objects on Cloudflare's free
+# plan (the older `new_classes` migration needs a paid plan). This Durable
+# Object never touches `storage` at all — it just relays WebSocket messages
+# in memory for the life of a session — so this is a pure infrastructure
+# choice with no code impact either way.
+new_sqlite_classes = ["FileDropSession"]
