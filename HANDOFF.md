@@ -185,6 +185,36 @@ project is a static site (`output: 'static'`); the Cloudflare Pages project
 should build with `npm run build` and deploy `dist/` as static assets, not
 run `wrangler deploy`.
 
+## Post-deploy #2: Background Remover — "no available backend found" — fixed
+
+After the hydration fix above, the user reported Background Remover failing
+with `no available backend found. ERR: [wasm] Error: previous call to
+'initWasm()' failed.` on production. Root-caused and reproduced exactly
+(character-for-character) with a local test harness: a mock CDN standing in
+for jsdelivr (correct CORS/CORP/MIME headers) plus the *exact* CSP string
+shipped in `public/_headers` for `/remove-background/*`, served with real
+COOP/COEP headers, in real headless Chromium.
+
+Cause: onnxruntime-web fetches its `.mjs` core as text from `wasmPaths`,
+wraps it in a `blob:` URL, and dynamically `import()`s that blob — governed
+by `script-src`, not `worker-src`. `/remove-background/*`,
+`/image-upscaler/*`, and `/transcribe/*` all had `blob:` in `worker-src` but
+not `script-src`, so every `InferenceSession.create()` call failed at that
+import. (`/video-compressor/*` already had `blob:` in `script-src` from the
+ffmpeg `toBlobURL()` fix, which is why it wasn't affected — this exact gap
+should have been caught by matching that page's CSP shape at the time.)
+Fixed by adding `blob:` to `script-src` on all three CSP blocks.
+
+Verified: with the fix, the same test harness gets past backend init
+cleanly (WebGPU still fails in this sandbox for an unrelated, expected
+reason — no real GPU adapter in headless Chromium — and falls back to WASM,
+which succeeds). Re-ran the full `npm run build` + Playwright sweep of all
+21 routes: clean, zero console errors, `dist/` still 7.2MB with zero files
+over 25 MiB. **Still not verified against an actual Cloudflare deploy or
+real jsdelivr** (blocked in this sandbox) — please redeploy and actually
+process a file on Background Remover / Image Upscaler / Transcriber before
+trusting this fully.
+
 ---
 
 ## Original build-session notes (partly superseded — see checklist above)

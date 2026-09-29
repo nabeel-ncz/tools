@@ -42,18 +42,26 @@
 # both tools' onnxruntime-web falls back to non-threaded WASM today, but
 # cross-origin isolation unlocks the threaded build later, and jsdelivr
 # serves with CORS (satisfying COEP:require-corp without a separate CORP
-# header) — NOT re-verified live post-change (jsdelivr is blocked in this
-# sandbox's network policy) — confirm self.crossOriginIsolated and zero
-# blocked requests on first real deploy.
+# header).
+#
+# `blob:` in script-src is required (not just worker-src): onnxruntime-web
+# fetches its .mjs core from wasmPaths as text, wraps it in a `blob:` URL,
+# and dynamically `import()`s that blob — which is governed by script-src,
+# same as the toBlobURL() pattern used for ffmpeg on /video-compressor/*.
+# Without it, every InferenceSession.create() call fails with "no available
+# backend found. ERR: [wasm] Error: previous call to 'initWasm()' failed." —
+# reproduced locally against a local mock of jsdelivr (real jsdelivr is
+# blocked by this sandbox's network policy) with the CSP below exactly as
+# shipped, both with and without this fix, to isolate the cause.
 /remove-background/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
 /image-upscaler/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
@@ -88,9 +96,12 @@
 # Transcriber: @huggingface/transformers fetches Whisper model weights from
 # Hugging Face and, since no wasmPaths override is set in Transcriber.svelte,
 # falls back to jsdelivr for its internal onnxruntime-web WASM backend too.
+# `blob:` in script-src is required for the same reason as
+# /remove-background/* and /image-upscaler/* below: onnxruntime-web
+# dynamically `import()`s its fetched core as a `blob:` URL.
 /transcribe/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
 
 # File Drop: WebRTC signaling — wss://signal.tools.nabl.in once
 # workers/filedrop is deployed and PUBLIC_SIGNALING_URL is set at build time
