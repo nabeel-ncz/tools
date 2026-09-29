@@ -1,13 +1,13 @@
-// Lazy loader for ffmpeg.wasm (single-threaded core), self-hosted from the
-// @ffmpeg/core npm package rather than fetched from a CDN at runtime.
+// Lazy loader for ffmpeg.wasm (single-threaded core), loaded from the
+// jsDelivr CDN at runtime rather than bundled into our own static assets.
 //
-// Self-hosting (via Vite's `?url` asset import, same pattern as
-// src/tools/pdf-shared/pdfjs.ts's worker import) means: no third-party CDN
-// dependency for a core engine file, same-origin loading needs no
-// toBlobURL() CORS workaround, and it works with the service worker's
-// same-origin caching. The files are pulled from node_modules at build time
-// and content-hashed into dist/_astro/ like any other bundled asset — they
-// are not committed to the repo.
+// The core's .wasm file is ~30MB, which exceeds Cloudflare's 25 MiB
+// per-asset limit for static deploys (Pages and Workers assets alike) — a
+// bundled copy makes the site fail to deploy outright. Loading from a CDN
+// keeps it out of dist/_astro/ entirely. We still use toBlobURL() (from
+// @ffmpeg/util) to fetch-then-blob it same-origin, which is ffmpeg.wasm's
+// documented pattern for cross-origin core loading and keeps it working
+// under this site's COEP/CORP headers.
 //
 // We intentionally use the single-thread core (@ffmpeg/core, NOT
 // @ffmpeg/core-mt): the multi-threaded core requires cross-origin isolation
@@ -15,8 +15,10 @@
 // not send. The single-thread core works with no special headers.
 
 import type { FFmpeg } from '@ffmpeg/ffmpeg';
-import coreURL from '@ffmpeg/core?url';
-import wasmURL from '@ffmpeg/core/wasm?url';
+import { toBlobURL } from '@ffmpeg/util';
+
+const CORE_VERSION = '0.12.6';
+const CORE_BASE = `https://cdn.jsdelivr.net/npm/@ffmpeg/core@${CORE_VERSION}/dist/esm`;
 
 let ffmpegInstance: FFmpeg | null = null;
 let loadingPromise: Promise<FFmpeg> | null = null;
@@ -39,6 +41,10 @@ export async function loadEngine(): Promise<FFmpeg> {
   loadingPromise = (async () => {
     const { FFmpeg } = await import('@ffmpeg/ffmpeg');
     const ffmpeg = new FFmpeg();
+    const [coreURL, wasmURL] = await Promise.all([
+      toBlobURL(`${CORE_BASE}/ffmpeg-core.js`, 'text/javascript'),
+      toBlobURL(`${CORE_BASE}/ffmpeg-core.wasm`, 'application/wasm'),
+    ]);
     await ffmpeg.load({ coreURL, wasmURL });
     ffmpegInstance = ffmpeg;
     return ffmpeg;

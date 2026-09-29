@@ -6,37 +6,27 @@
 // of the initial page bundle for every visitor — only people who actually start
 // processing pay for it.
 //
-// The WASM backend files are self-hosted (via Vite's `?url` asset import) from the
-// onnxruntime-web npm package rather than fetched from a CDN at runtime — no
-// third-party dependency, works with the service worker's same-origin caching, and
-// the files Vite already has to bundle (see the dist-size note in HANDOFF.md) are
-// actually the ones served, instead of sitting in dist/ unused.
+// The WASM backend files are loaded from jsdelivr at runtime rather than
+// self-hosted: the largest of onnxruntime-web's threaded WASM builds run to
+// ~28MB, which exceeds Cloudflare's 25 MiB per-asset deploy limit (Pages and
+// Workers assets alike) — bundling any of them makes the site fail to
+// deploy outright. jsdelivr is onnxruntime-web's own documented default CDN
+// fallback (Transcriber already relies on the same default — see
+// src/tools/transcribe — and public/_headers already allows it site-wide
+// for these WASM-backed tool pages).
 
 import type * as OrtNamespace from 'onnxruntime-web';
 
-import wasmThreaded from 'onnxruntime-web/ort-wasm-simd-threaded.wasm?url';
-import mjsThreaded from 'onnxruntime-web/ort-wasm-simd-threaded.mjs?url';
-import wasmJsep from 'onnxruntime-web/ort-wasm-simd-threaded.jsep.wasm?url';
-import mjsJsep from 'onnxruntime-web/ort-wasm-simd-threaded.jsep.mjs?url';
-import wasmAsyncify from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.wasm?url';
-import mjsAsyncify from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.mjs?url';
-
-const WASM_PATHS: Record<string, string> = {
-  'ort-wasm-simd-threaded.wasm': wasmThreaded,
-  'ort-wasm-simd-threaded.mjs': mjsThreaded,
-  'ort-wasm-simd-threaded.jsep.wasm': wasmJsep,
-  'ort-wasm-simd-threaded.jsep.mjs': mjsJsep,
-  'ort-wasm-simd-threaded.asyncify.wasm': wasmAsyncify,
-  'ort-wasm-simd-threaded.asyncify.mjs': mjsAsyncify,
-};
+const ORT_VERSION = '1.30.0';
+const WASM_BASE = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`;
 
 let ortPromise: Promise<typeof OrtNamespace> | null = null;
 
-/** Dynamically imports onnxruntime-web and points it at the self-hosted WASM/WebGPU backend files. */
+/** Dynamically imports onnxruntime-web and points it at the CDN-hosted WASM/WebGPU backend files. */
 export function loadOrt(): Promise<typeof OrtNamespace> {
   if (!ortPromise) {
     ortPromise = import('onnxruntime-web').then((ort) => {
-      ort.env.wasm.wasmPaths = WASM_PATHS;
+      ort.env.wasm.wasmPaths = WASM_BASE;
       return ort;
     });
   }

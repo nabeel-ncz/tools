@@ -96,6 +96,50 @@ tested: `QA-REPORT.md`.
   (only possible once the domain is live — see `docs/indexnow.md`).
 - Posting/publishing any launch assets once Part 2 is produced.
 
+## Post-QA: first real Cloudflare deploy attempt — failed, fixed
+
+The first real Cloudflare deploy failed: `✘ [ERROR] Asset too large` —
+`dist/_astro/ffmpeg-core.wasm` was 30.6 MiB, over Cloudflare's 25 MiB
+per-asset limit (applies to both Pages and Workers static-asset deploys).
+Root cause: the self-hosting fix for ffmpeg.wasm/onnxruntime-web made during
+the QA pass (item above, "CDN-dependent … now self-hosted") traded a
+sandbox-only network-policy block for a real production deploy blocker,
+since these engines' WASM files are tens of MB. Fixed:
+
+- `src/tools/video-compressor/ffmpegEngine.ts`: loads `@ffmpeg/core` from
+  jsdelivr via `toBlobURL()` (ffmpeg.wasm's documented CORS-safe pattern)
+  instead of a bundled `?url` import.
+- `src/tools/remove-background/onnxSetup.ts` and
+  `src/tools/image-upscaler/onnxSetup.ts`: point `ort.env.wasm.wasmPaths` at
+  jsdelivr instead of bundled `?url` imports.
+- `astro.config.mjs`: added `vite.resolve.conditions:
+  ['onnxruntime-web-use-extern-wasm']` — without this, Vite still statically
+  bundled all ~26-28MB WASM variants from onnxruntime-web's default entry
+  (`new URL(..., import.meta.url)` references baked into `ort.bundle.min.mjs`)
+  even though the runtime `wasmPaths` override made those bundled copies
+  unused dead weight. This resolves the "`dist/` bloat from onnxruntime-web"
+  item in §6 below — it was a real deploy blocker, not just bloat.
+- `public/_headers`: added `cdn.jsdelivr.net` to CSP script-src/worker-src/
+  connect-src (and `blob:` to script-src) for `/video-compressor/*`,
+  `/remove-background/*`, `/image-upscaler/*`.
+
+Verified locally: `npm run build` (0 errors, 25/25 pages), `dist/` total
+7.2MB (was 130MB+), zero files over 25 MiB. **Not re-verified live** —
+jsdelivr is blocked in this sandbox's network policy, same limitation noted
+throughout `QA-REPORT.md`. On the next real deploy, confirm: Video
+Compressor/Background Remover/Image Upscaler still load and process a real
+file with zero blocked requests, and `self.crossOriginIsolated === true` on
+`/video-compressor`.
+
+Separately, the same build log showed the Cloudflare project running
+`npx wrangler deploy`, which auto-detected Astro and ran `astro add
+cloudflare` — mutating `astro.config.mjs` to add the `@astrojs/cloudflare`
+server adapter and rebuilding in `server` mode. That's a Cloudflare
+dashboard/build-command configuration mismatch, not a codebase issue: this
+project is a static site (`output: 'static'`); the Cloudflare Pages project
+should build with `npm run build` and deploy `dist/` as static assets, not
+run `wrangler deploy`.
+
 ---
 
 ## Original build-session notes (partly superseded — see checklist above)

@@ -34,34 +34,45 @@
   Cross-Origin-Embedder-Policy: require-corp
 
 # Background Remover and Image Upscaler fetch their ONNX model weights from
-# Hugging Face at runtime (the WASM inference backend itself is self-hosted,
-# see src/tools/remove-background/onnxSetup.ts and
-# src/tools/image-upscaler/onnxSetup.ts) — allow that one host's connect-src.
-# Also scoped with COOP/COEP: both tools' onnxruntime-web falls back to
-# non-threaded WASM today, but cross-origin isolation unlocks the threaded
-# build later, and every asset these two pages load (self-hosted JS/WASM,
-# plus the huggingface.co model file) works fine under COEP — see the audit
-# report's COOP/COEP test notes.
+# Hugging Face at runtime, and their onnxruntime-web WASM backend from
+# jsdelivr (see src/tools/remove-background/onnxSetup.ts and
+# src/tools/image-upscaler/onnxSetup.ts — the largest threaded WASM build is
+# ~28MB, over Cloudflare's 25 MiB per-asset deploy limit, so it can't be
+# bundled and is loaded from the CDN instead). Also scoped with COOP/COEP:
+# both tools' onnxruntime-web falls back to non-threaded WASM today, but
+# cross-origin isolation unlocks the threaded build later, and jsdelivr
+# serves with CORS (satisfying COEP:require-corp without a separate CORP
+# header) — NOT re-verified live post-change (jsdelivr is blocked in this
+# sandbox's network policy) — confirm self.crossOriginIsolated and zero
+# blocked requests on first real deploy.
 /remove-background/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
 /image-upscaler/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https://huggingface.co https://*.hf.co; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
-# Video Compressor's ffmpeg.wasm core is fully self-hosted (no CSP change
-# needed from the site default) — COOP/COEP is added here so a future
+# Video Compressor: the ffmpeg.wasm worker script itself stays self-hosted
+# (own /_astro/* bundle, see that block above), but its ~30MB core (JS+WASM)
+# is loaded from jsdelivr at runtime via toBlobURL() instead of being
+# bundled — a bundled copy exceeds Cloudflare's 25 MiB per-asset deploy
+# limit (see src/tools/video-compressor/ffmpegEngine.ts). jsdelivr serves
+# with CORS (Access-Control-Allow-Origin: *), which satisfies COEP:
+# require-corp for the fetch without needing a Cross-Origin-Resource-Policy
+# response header, and toBlobURL's resulting blob: URL needs 'blob:' added
+# to script-src to be import()-able. COOP/COEP is kept here so a future
 # switch to the multithreaded @ffmpeg/core-mt build can use
-# SharedArrayBuffer. Verified live: uploaded a video, clicked Export, and
-# confirmed self.crossOriginIsolated === true with the ffmpeg worker/core/
-# wasm all loading with zero failed or CSP/COEP-blocked requests (see the
-# /_astro/* block above — that fix was required for this to work).
+# SharedArrayBuffer. NOT re-verified live post-change (jsdelivr is blocked
+# in this sandbox's network policy) — confirm self.crossOriginIsolated and
+# zero blocked requests on first real deploy.
 /video-compressor/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob:; connect-src 'self' https://cdn.jsdelivr.net; manifest-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
