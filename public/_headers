@@ -103,21 +103,27 @@
   ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.co https://cdn.jsdelivr.net; manifest-src 'self'
 
-# File Drop: WebRTC signaling — wss://signal.tools.nabl.in once
-# workers/filedrop is deployed and PUBLIC_SIGNALING_URL is set at build time
-# (src/tools/file-drop/FileDrop.svelte); until then it falls back to
-# same-origin wss://<host>/ws/filedrop, already covered by 'self'. The public
-# STUN server (stun:stun.l.google.com:19302) used for ICE negotiation is
-# deliberately NOT listed in connect-src: tested live and confirmed Chrome
-# rejects "stun:host:port" as an invalid CSP source-list entry (STUN URIs
-# use a bare scheme:host:port, not CSP's scheme://host:port grammar) — it's
-# silently dropped from the policy with a console warning, so including it
-# does nothing. connect-src does not gate WebRTC ICE/STUN candidate
-# gathering in current Chrome regardless, so no source-list entry is needed
-# for it to keep working.
+# File Drop: WebRTC signaling. PUBLIC_SIGNALING_URL (build-time env var,
+# src/tools/file-drop/FileDrop.svelte) can point at either the custom domain
+# (wss://signal.tools.nabl.in, once that route is set up in
+# workers/filedrop/wrangler.toml) or the Worker's default
+# *.workers.dev URL — both are allowed here so neither deploy path needs a
+# _headers change. `wss://*.workers.dev` matches the two-label
+# <worker-name>.<account-subdomain>.workers.dev host Cloudflare assigns by
+# default (confirmed live in real Chromium: the CSP wildcard matches
+# multi-label subdomains, not just one label). Until either is deployed,
+# it falls back to same-origin wss://<host>/ws/filedrop, already covered by
+# 'self'. The public STUN server (stun:stun.l.google.com:19302) used for ICE
+# negotiation is deliberately NOT listed in connect-src: tested live and
+# confirmed Chrome rejects "stun:host:port" as an invalid CSP source-list
+# entry (STUN URIs use a bare scheme:host:port, not CSP's scheme://host:port
+# grammar) — it's silently dropped from the policy with a console warning,
+# so including it does nothing. connect-src does not gate WebRTC ICE/STUN
+# candidate gathering in current Chrome regardless, so no source-list entry
+# is needed for it to keep working.
 /file-drop/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' wss://signal.tools.nabl.in; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' wss://signal.tools.nabl.in wss://*.workers.dev; manifest-src 'self'
 
 # Camera / microphone / screen-capture permissions, scoped to only the tool
 # pages whose Svelte components actually call getUserMedia/getDisplayMedia
