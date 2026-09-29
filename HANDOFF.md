@@ -112,24 +112,69 @@ since these engines' WASM files are tens of MB. Fixed:
 - `src/tools/remove-background/onnxSetup.ts` and
   `src/tools/image-upscaler/onnxSetup.ts`: point `ort.env.wasm.wasmPaths` at
   jsdelivr instead of bundled `?url` imports.
-- `astro.config.mjs`: added `vite.resolve.conditions:
-  ['onnxruntime-web-use-extern-wasm']` — without this, Vite still statically
-  bundled all ~26-28MB WASM variants from onnxruntime-web's default entry
-  (`new URL(..., import.meta.url)` references baked into `ort.bundle.min.mjs`)
-  even though the runtime `wasmPaths` override made those bundled copies
-  unused dead weight. This resolves the "`dist/` bloat from onnxruntime-web"
-  item in §6 below — it was a real deploy blocker, not just bloat.
+- `astro.config.mjs`: originally added `vite.resolve.conditions:
+  ['onnxruntime-web-use-extern-wasm']` to stop Vite statically bundling
+  onnxruntime-web's ~26-28MB WASM variants. **This broke the site in
+  production — see the next entry.** Replaced with a scoped alias (below).
 - `public/_headers`: added `cdn.jsdelivr.net` to CSP script-src/worker-src/
   connect-src (and `blob:` to script-src) for `/video-compressor/*`,
   `/remove-background/*`, `/image-upscaler/*`.
 
 Verified locally: `npm run build` (0 errors, 25/25 pages), `dist/` total
-7.2MB (was 130MB+), zero files over 25 MiB. **Not re-verified live** —
-jsdelivr is blocked in this sandbox's network policy, same limitation noted
-throughout `QA-REPORT.md`. On the next real deploy, confirm: Video
-Compressor/Background Remover/Image Upscaler still load and process a real
-file with zero blocked requests, and `self.crossOriginIsolated === true` on
-`/video-compressor`.
+7.2MB (was 130MB+), zero files over 25 MiB.
+
+## Post-deploy: site-wide breakage from the fix above — root-caused, fixed
+
+After deploying the fix above, the user reported most tools broken in
+production: every page showed feature-detection fallback text (File Drop's
+"doesn't support the WebRTC and WebSocket APIs", the Trust Meter's "network
+monitor unsupported") even in a fully capable real browser. Reproduced
+locally (`astro preview` over a real static build, real headless Chromium —
+not a Cloudflare-specific issue): every page threw `hydrate(...) is not
+available on the server` (`https://svelte.dev/e/lifecycle_function_unavailable`).
+
+Root cause: `vite.resolve.conditions` **replaces** Vite's default client
+conditions (`browser`/`import`/etc.) rather than adding to them. Svelte's own
+`package.json` `exports` map is `{ worker: "...", browser: "...", default:
+"./src/index-server.js" }` — with the default conditions gone, nothing
+matched `worker` or `browser` anymore, so resolution fell through to
+`default` and every page's client bundle imported **Svelte's server runtime**.
+Hydration failed on literally every island on every page, so every
+component was permanently stuck in its server-rendered initial state (which
+is why the feature-detection text — which only updates once client-side
+`onMount` runs — never changed). This is why "most functionalities" broke,
+not just the two ONNX-tool pages the original fix touched.
+
+Fixed by replacing the global condition with two exact-match `resolve.alias`
+entries in `astro.config.mjs` (regex-anchored, e.g. `/^onnxruntime-web$/`),
+which only redirect that one bare specifier and never touch package-exports
+resolution for anything else:
+- `onnxruntime-web` → `onnxruntime-web/dist/ort.min.mjs` (the extern-wasm
+  entry, no bundled WASM references) — used by
+  `src/tools/remove-background/onnxSetup.ts` and
+  `src/tools/image-upscaler/onnxSetup.ts`.
+- `onnxruntime-web/webgpu` → `onnxruntime-web/dist/ort.webgpu.min.mjs` — a
+  second, independent source of the same bloat: `@huggingface/transformers`
+  (Transcriber) imports this deep subpath directly, which resolves through
+  its own nested `node_modules/onnxruntime-web` copy to a *bundled* variant
+  with the same `new URL(..., import.meta.url)` WASM references. No runtime
+  config change was needed for Transcriber itself — `transformers.web.js`
+  already defaults `ONNX_ENV.wasm.wasmPaths` to jsdelivr automatically when
+  unset (confirmed by reading its source), so this was purely a build-time
+  bundling fix.
+
+Re-verified after the fix: `npm run build` clean, `dist/` still 7.2MB with
+zero files over 25 MiB, and — critically — a full Playwright sweep of all 21
+routes against a real local static build in real headless Chromium shows
+zero page errors and zero unexpected console errors on every page, no
+`hydrate` error anywhere, File Drop's WebRTC/WebSocket feature checks pass,
+and Trust Meter correctly hydrates and shows "Uploaded 0 bytes" (verified by
+scrolling it into view, since it uses `client:visible`). **Still not
+verified against an actual Cloudflare deploy** — please redeploy and
+spot-check a few pages for console errors before trusting this fully; the
+jsdelivr WASM fetches themselves remain unverified live (jsdelivr is blocked
+in this sandbox's network policy, same limitation noted throughout
+`QA-REPORT.md`).
 
 Separately, the same build log showed the Cloudflare project running
 `npx wrangler deploy`, which auto-detected Astro and ran `astro add
