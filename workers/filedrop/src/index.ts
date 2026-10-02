@@ -34,7 +34,8 @@ export interface Env {
   SESSION_DO: DurableObjectNamespace;
 }
 
-const SESSION_PATH = /^\/ws\/filedrop\/([A-Za-z0-9]{4,12})$/;
+// File Drop and Shared Notepad both just need a two-peer signaling relay.
+const SESSION_PATH = /^\/ws\/(?:filedrop|notepad)\/([A-Za-z0-9]{4,12})$/;
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -50,7 +51,9 @@ export default {
     }
 
     const sessionCode = match[1].toUpperCase();
-    const id = env.SESSION_DO.idFromName(sessionCode);
+    // Namespace by tool so a File Drop code and a Notepad code never collide.
+    const tool = url.pathname.split('/')[2];
+    const id = env.SESSION_DO.idFromName(`${tool}:${sessionCode}`);
     const stub = env.SESSION_DO.get(id);
     return stub.fetch(request);
   },
