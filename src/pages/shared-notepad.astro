@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import ToolLayout from '../layouts/ToolLayout.astro';
+import SharedNotepad from '../tools/shared-notepad/SharedNotepad.svelte';
+
+const tool = await getEntry('tools', 'shared-notepad');
+if (!tool) throw new Error('Missing tools/shared-notepad content entry');
+---
+
+<ToolLayout tool={tool}>
+  <SharedNotepad slot="tool" client:visible />
+</ToolLayout>
