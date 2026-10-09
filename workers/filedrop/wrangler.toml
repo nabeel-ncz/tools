@@ -20,6 +20,10 @@ compatibility_date = "2024-09-23"
 name = "SESSION_DO"
 class_name = "FileDropSession"
 
+[[durable_objects.bindings]]
+name = "HUB_DO"
+class_name = "NotepadHub"
+
 [[migrations]]
 tag = "v1"
 # SQLite-backed storage is required for Durable Objects on Cloudflare's free
@@ -28,3 +32,8 @@ tag = "v1"
 # in memory for the life of a session — so this is a pure infrastructure
 # choice with no code impact either way.
 new_sqlite_classes = ["FileDropSession"]
+
+# Shared Notepad presence/signaling hub (see NotepadHub in src/index.ts).
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["NotepadHub"]

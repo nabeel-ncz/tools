@@ -91,3 +91,20 @@ build` at the repo root does not touch this directory). It has its own
   instance is warm; there's no explicit TTL/cleanup. In practice an idle
   DO with no attached sockets costs nothing meaningful, but a scheduled
   alarm to force-close abandoned sessions would be a tidy addition.
+
+## Shared Notepad hub (`NotepadHub`)
+
+The same Worker also hosts the presence/signaling hub for the Shared Notepad
+tool at `/ws/hub/<device-key>`. It uses a second Durable Object class
+(`NotepadHub`, migration `v2`) with the WebSocket Hibernation API, so idle
+devices cost nothing. After pulling this change, redeploy from this
+directory so the migration runs:
+
+```sh
+cd workers/filedrop
+npx wrangler deploy --config wrangler.toml
+```
+
+(`--config` matters: the repo root also contains a `wrangler.jsonc` for the
+static site, which Wrangler can pick up instead.) No new site-side variable
+is needed — Shared Notepad derives its URL from `PUBLIC_SIGNALING_URL`.
