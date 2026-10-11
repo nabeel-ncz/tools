@@ -108,3 +108,19 @@ npx wrangler deploy --config wrangler.toml
 (`--config` matters: the repo root also contains a `wrangler.jsonc` for the
 static site, which Wrangler can pick up instead.) No new site-side variable
 is needed — Shared Notepad derives its URL from `PUBLIC_SIGNALING_URL`.
+
+## Tic Tac Toe rooms
+
+The Tic Tac Toe game reuses `FileDropSession` for its two-player rooms at
+`/ws/tictactoe/<code>` (namespaced so a game code never collides with a File
+Drop code). The Worker relays only the WebRTC handshake; moves travel over
+the peer-to-peer data channel. No new Durable Object or migration — just
+redeploy from this directory so the Worker accepts the new path:
+
+```sh
+cd workers/filedrop
+npx wrangler deploy --config wrangler.toml
+```
+
+Tic Tac Toe derives its URL from `PUBLIC_SIGNALING_URL` like Shared Notepad.
+Its Pass & play mode needs no server at all.
