@@ -35,10 +35,10 @@ export interface Env {
   HUB_DO: DurableObjectNamespace;
 }
 
-// File Drop and Shared Notepad both just need a two-peer signaling relay.
+// File Drop, Shared Notepad and Tic Tac Toe all just need a two-peer signaling relay.
 // Shared Notepad: one persistent socket per device key, routed by NotepadHub.
 const HUB_PATH = /^\/ws\/hub\/([A-Za-z0-9]{6,12})$/;
-const SESSION_PATH = /^\/ws\/(?:filedrop|notepad)\/([A-Za-z0-9]{4,12})$/;
+const SESSION_PATH = /^\/ws\/(?:filedrop|notepad|tictactoe)\/([A-Za-z0-9]{4,12})$/;
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
